@@ -135,9 +135,9 @@ export default function Navbar() {
               </NavigationMenuList>
             </NavigationMenu> */}
 
-          {/* <Meteors number={50} className="z-50" /> */}
+          <Meteors number={50} className="z-50" />
         </nav>
-        {/* <Meteors number={50} /> */}
+        <Meteors number={50} />
       </header>
     </>
   );
