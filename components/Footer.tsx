@@ -63,7 +63,7 @@ export default function Footer() {
           Powered by Entab: <a href="https://lviscampuscare.org">CampusCare</a>
         </p>
         <p className="leading-7 ">
-          This is just a parody, all media right belong to LOTUS VALLEY
+          This is just a parody.The two logos, the media used in the website, and other related terms to Lotus Valley are property of Lotus Valley School, Gurgaon. All rights reserved.
         </p>
         <p className="leading-7 ">
           Designed and Developed by:{" "}
