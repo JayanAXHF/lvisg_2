@@ -17,21 +17,13 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
-      extend: {
-        animation: {
-          "meteor-effect": "meteor 5s linear infinite",
-        },
-        keyframes: {
-          meteor: {
-            "0%": { transform: "rotate(215deg) translateX(0)", opacity: "1" },
-            "70%": { opacity: "1" },
-            "100%": {
-              transform: "rotate(215deg) translateX(-500px)",
-              opacity: "0",
-            },
-          },
-        },
+      animation: {
+        "meteor-effect": "meteor 5s linear infinite",
+        shimmer: "shimmer 2s linear infinite",
+        scroll:
+          "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
       },
+
       borderRadius: {
         lg: `var(--radius)`,
         md: `calc(var(--radius) - 2px)`,
@@ -39,6 +31,11 @@ module.exports = {
       },
 
       keyframes: {
+        scroll: {
+          to: {
+            transform: "translate(calc(-50% - 0.5rem))",
+          },
+        },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -47,11 +44,24 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        shimmer: {
+          from: {
+            backgroundPosition: "0 0",
+          },
+          to: {
+            backgroundPosition: "-200% 0",
+          },
+        },
+        meteor: {
+          "0%": { transform: "rotate(215deg) translateX(0)", opacity: "1" },
+          "70%": { opacity: "1" },
+          "100%": {
+            transform: "rotate(215deg) translateX(-500px)",
+            opacity: "0",
+          },
+        },
       },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-      },
+
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

@@ -2,209 +2,143 @@
 import * as React from "react";
 import { Button } from "@/components/ui/button";
 import { SheetTrigger, SheetContent, Sheet } from "@/components/ui/sheet";
-import {
-  NavigationMenu,
-  NavigationMenuList,
-  NavigationMenuItem,
-  NavigationMenuTrigger,
-  NavigationMenuContent,
-  NavigationMenuLink,
-} from "@/components/ui/navigation-menu";
-import Image from "next/image";
+import { CaretSortIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
-import { cn } from "@/utils/cn";
-import "@/app/globals.css";
-import Meteors from "./ui/meteor";
+import { Meteors } from "./ui/meteor";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "./ui/collapsible";
+import { navItems } from "@/data";
 
-const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
-  return (
-    <li>
-      <NavigationMenuLink asChild>
-        <a
-          ref={ref}
-          className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className
-          )}
-          {...props}
-        >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground ">
-            {children}
-          </p>
-        </a>
-      </NavigationMenuLink>
-    </li>
-  );
-});
+import { MenuIcon } from "lucide-react";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function Navbar() {
+  const [aboutCollapsible, setAboutCollapsible] =
+    React.useState<boolean>(false);
+  const [eventCollapsible, setEventCollapsible] =
+    React.useState<boolean>(false);
+  const [studentCollapsible, setStudentCollapsible] =
+    React.useState<boolean>(false);
+  const [nepCollapsible, setNepCollapsible] = React.useState<boolean>(false);
   return (
     <>
-      <header className="flex h-20 w-full shrink-0 items-center px-4 md:px-6 md:py-10 lg:px-20 lg:py-16">
-        {/* <Meteors number={50} /> */}
-        <Sheet>
-          <SheetTrigger asChild>
-            <Button className="lg:hidden" size="icon" variant="outline">
-              <MenuIcon className="h-6 w-6" />
-              <span className="sr-only">Toggle navigation menu</span>
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="left">
-            <Link className="mr-6 hidden lg:flex" href="#">
-              <Image src={"public/logo_green.jpg"} alt="school logo" />
-              <span className="sr-only">Acme Inc</span>
-            </Link>
-            <div className="grid gap-2 py-6">
-              <Link
-                className="flex w-full items-center py-2 text-lg font-semibold"
-                href="#"
-              >
-                Home
-              </Link>
-              <Link
-                className="flex w-full items-center py-2 text-lg font-semibold"
-                href="#"
-              >
-                About
-              </Link>
-              <Link
-                className="flex w-full items-center py-2 text-lg font-semibold"
-                href="#"
-              >
-                Services
-              </Link>
-              <Link
-                className="flex w-full items-center py-2 text-lg font-semibold"
-                href="#"
-              >
-                Contact
-              </Link>
+      <header className="flex absolute z-10 top-0 py-10 w-full shrink-0 items-center px-4 md:px-6  lg:px-20 overflow-x-hidden lg:hidden !overflow-y-auto">
+        <ScrollArea className="!overflow-y-scroll">
+          <Sheet>
+            <div className="flex items-center w-full justify-between">
+              <SheetTrigger asChild>
+                <Button className="" size="icon" variant="outline">
+                  <MenuIcon className="h-6 w-6" />
+                  <span className="sr-only">Toggle navigation menu</span>
+                </Button>
+              </SheetTrigger>
+              <img
+                src={"/logo_green.jpg"}
+                alt="school logo"
+                className="aspect-auto h-16 hidden"
+              />
             </div>
-          </SheetContent>
-        </Sheet>
-        <Link className="mr-6 hidden lg:flex" href="#">
-          <img
-            src={"/logo_green.jpg"}
-            alt="school logo"
-            className="aspect aspect-auto h-24"
-          />
-          <span className="sr-only">Lotus Valley International School</span>
-        </Link>
-        <nav className="ml-auto hidden lg:flex gap-6">
-          <NavigationMenu>
-            <NavigationMenuList>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger>About LVISG</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[500px] ">
-                    <ListItem title={"About Us"} href={"/about"}>
-                      At LVISG, we believe in making future-ready children
-                    </ListItem>
-                    <ListItem title={"Learning Approach"} href={"/about"}>
-                      We believe that a good pedagogy is essential for child
-                      growth
-                    </ListItem>
-                    <ListItem title={"Virtual Tour"} href={"/about"}>
-                      Get a full and virtual 360&deg; tour of the school campus
-                    </ListItem>
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger>
-                  Events & Programmes
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[500px] ">
-                    <ListItem title={"Events"} href={"/about"}>
-                      A list of the most recent events held at LVISG
-                    </ListItem>
-                    <ListItem title={"VISTAS"} href={"/about"}>
-                      Lotus Valley&apos;s exceptional Career Counselling &
-                      University Placement Cell
-                    </ListItem>
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger>Student Content</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[500px] ">
-                    <ListItem title={"Wall of Fame"} href={"/about"}>
-                      A collage of our best-performing students
-                    </ListItem>
-                    <ListItem
-                      title={"I-Card"}
-                      href={"https://www.picksindia.com/user/login"}
+            <SheetContent side="left">
+              <Link className="mr-6 lg:hidden " href="#">
+                <img
+                  src={"/logo_green.jpg"}
+                  alt="school logo"
+                  className="aspect aspect-auto h-16"
+                />
+                <span className="sr-only">
+                  Lotus Valley International School Gurugram
+                </span>
+              </Link>
+
+              <div className="lg:hidden gap-6 flex flex-col py-6">
+                {navItems.map((item, index) => {
+                  return (
+                    <Collapsible
+                      key={index}
+                      open={
+                        index === 0
+                          ? aboutCollapsible
+                          : index === 1
+                          ? eventCollapsible
+                          : index === 2
+                          ? studentCollapsible
+                          : nepCollapsible
+                      }
+                      onOpenChange={
+                        index === 0
+                          ? setAboutCollapsible
+                          : index === 1
+                          ? setEventCollapsible
+                          : index === 2
+                          ? setStudentCollapsible
+                          : setNepCollapsible
+                      }
+                      className="w-4/5 space-y-2"
                     >
-                      Click here to upload your photo and details for the I-Card
-                    </ListItem>
-                    <ListItem title={"Admissions"} href={"/about"}>
-                      Information related to the admission progress
-                    </ListItem>
-                    <ListItem title={"ENTAB Portal"} href={"/about"}>
-                      Click here to go to the ENTAB student portal for homework
-                      and circulars
-                    </ListItem>
-                    <ListItem title={"CBSE Circulars"} href={"/about"}>
-                      Official circulars sent by CBSE to the school
-                    </ListItem>
-                    <ListItem title={"CBSE Results"} href={"/about"}>
-                      CBSE results for class X &amp; XII board examinations
-                    </ListItem>
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger>NEP 2020</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[500px] ">
-                    <ListItem title={"NEP 2020"} href={"/about"}>
-                      LVISG marches towards the NEP 2020
-                    </ListItem>
-                    <ListItem
-                      title={"Mandatory Public Disclosure"}
-                      href={"https://www.picksindia.com/user/login"}
-                    >
-                      Certifications, X &amp; XII results and Regulations
-                    </ListItem>
-                    <ListItem title={"Admissions"} href={"/about"}>
-                      Information related to the admission progress
-                    </ListItem>
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
-          <Meteors />
+                      <div className="flex items-center justify-between space-x-4 px-4">
+                        <h4 className="text-sm font-semibold">{item.title}</h4>
+                        <CollapsibleTrigger asChild>
+                          <Button variant="ghost" size="sm">
+                            <CaretSortIcon className="h-4 w-4" />
+                            <span className="sr-only">Toggle</span>
+                          </Button>
+                        </CollapsibleTrigger>
+                      </div>
+                      <CollapsibleContent className="space-y-2">
+                        {item.subItems.map((subItem, index) => {
+                          return (
+                            <div
+                              className="rounded-md border px-4 py-2  text-sm shadow-sm"
+                              key={index}
+                            >
+                              {subItem.name}
+                            </div>
+                          );
+                        })}
+                      </CollapsibleContent>
+                    </Collapsible>
+                  );
+                })}
+              </div>
+            </SheetContent>
+          </Sheet>
+        </ScrollArea>
+
+        <nav className="ml-auto gap-6">
+          {/* <NavigationMenu>
+              <NavigationMenuList>
+                {navItems.map((item, index) => {
+                  return (
+                    <NavigationMenuItem key={index}>
+                      <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
+                      <NavigationMenuContent>
+                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[500px] ">
+                          {item.subItems.map((subItem, index) => {
+                            return (
+                              <ListItem
+                                key={index}
+                                title={subItem.name}
+                                href={""}
+                              >
+                                {subItem.description}
+                              </ListItem>
+                            );
+                          })}
+                        </ul>
+                      </NavigationMenuContent>
+                    </NavigationMenuItem>
+                  );
+                })}
+              </NavigationMenuList>
+            </NavigationMenu> */}
+
+          <Meteors number={50} className="z-50" />
         </nav>
-        {/* <Meteors number={50} /> */}
+        <Meteors number={50} />
       </header>
     </>
-  );
-}
-
-function MenuIcon(props: any) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <line x1="4" x2="20" y1="12" y2="12" />
-      <line x1="4" x2="20" y1="6" y2="6" />
-      <line x1="4" x2="20" y1="18" y2="18" />
-    </svg>
   );
 }
