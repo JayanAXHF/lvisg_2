@@ -63,7 +63,7 @@ export default function Footer() {
           Powered by Entab: <a href="https://lviscampuscare.org">CampusCare</a>
         </p>
         <p className="leading-7 ">
-          &copy; 2024 All rights reserved with no one
+          &copy; FRXGFA 2024, rights reserved
         </p>
         <p className="leading-7 ">
           Designed and Developed by:{" "}
