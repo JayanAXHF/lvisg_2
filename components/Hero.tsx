@@ -1,10 +1,8 @@
 "use client";
 import React from "react";
 
-import { cn } from "@/lib/utils";
 import { Highlight } from "@/components/ui/hero-highlight";
 import { BackgroundBeams } from "./ui/background-beams";
-import ShimmerButton from "./ui/shimmer-button";
 import Link from "next/link";
 
 export default function Hero() {

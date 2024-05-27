@@ -96,6 +96,7 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        "lvis-red": "#8b221a",
       },
     },
   },

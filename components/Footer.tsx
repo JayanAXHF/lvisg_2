@@ -1,23 +1,21 @@
 "use client";
 import React from "react";
 import { Boxes } from "@/components/ui/background-boxes";
-import { cn } from "@/lib/utils";
 import { WobbleCard } from "./ui/wobblecard";
-import Link from "next/link";
 
 export default function Footer() {
   return (
-    <div className="lg:h-[29rem] relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center rounded-lg ">
+    <div className="lg:h-[29rem] relative w-full overflow-hidden bg-lvis-red lg:bg-slate-900 flex flex-col items-center justify-center rounded-lg ">
       <div className="grid grid-flow-row content-between py-0">
-        <div className="absolute inset-0 w-full h-full bg-slate-900 z-10 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
-        <Boxes />
+        <div className="absolute inset-0 w-full h-full bg-lvis-red lg:bg-slate-900 z-10 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
+        <Boxes className="hidden lg:flex" />
         <div className="w-full px-10 h-full py-10 grid lg:grid-cols-8 grid-flow-row  justify-between gap-x-5 items-center ">
           <div className="h-full lg:col-span-3 z-50 ">
             <img className="h-auto w-auto" src="/logo_white.png" />
           </div>
           <div className="lg:col-span-5 grid lg:grid-cols-4 gap-x-10 lg:grid-flow-row gap-y-8">
             <div className="col-span-2">
-              <WobbleCard containerClassName="col-span-1 lg:col-span-2  bg-slate-700 text-white z-10 items-start py-0">
+              <WobbleCard containerClassName="col-span-1 lg:col-span-2 bg-yellow-800  lg:bg-teal-800/[0.7] text-white z-10 items-start py-0">
                 <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">
                   Quick Links
                 </h4>
@@ -31,7 +29,7 @@ export default function Footer() {
               </WobbleCard>
             </div>
             <div className="col-span-2">
-              <WobbleCard containerClassName="col-span-1 lg:col-span-2  bg-slate-700 text-white z-10 items-start py-0">
+              <WobbleCard containerClassName="col-span-1 lg:col-span-2 bg-yellow-800  lg:bg-teal-800/[0.7] text-white z-10 items-start py-0">
                 <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">
                   Contact Us
                 </h4>
