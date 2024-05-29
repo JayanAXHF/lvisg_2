@@ -5,7 +5,7 @@ import { WobbleCard } from "./ui/wobblecard";
 
 export default function Footer() {
   return (
-    <div className="lg:h-[29rem] relative w-full overflow-hidden bg-lvis-red lg:bg-slate-900 flex flex-col items-center justify-center rounded-lg ">
+    <div className="lg:h-[30rem] relative w-full overflow-hidden bg-lvis-red lg:bg-slate-900 flex flex-col items-center justify-center  ">
       <div className="grid grid-flow-row content-between py-0">
         <div className="absolute inset-0 w-full h-full bg-lvis-red lg:bg-slate-900 z-10 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
         <Boxes className="hidden lg:flex" />
@@ -57,13 +57,24 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="z-50 bg-slate-950 text-white lg:h-20 w-screen flex flex-col gap-y-5 lg:flex-row px-20 items-center justify-between py-5 lg:py-0">
+      <p className="leading-7 text-xs text-neutral-100 z-10 lg:px-0 px-10 py-2">
+        This is just a parody. The Lotus Valley International School logos,
+        including any variations with green or white text, the media used on the
+        website, and other terms related to Lotus Valley School, Gurgaon are the
+        intellectual property of Lotus Valley School, Gurgaon. All rights
+        reserved.{" "}
+        {/* The image for the International Dimension in Schools is the
+        intellectual property of The United Kingdom's international organisation
+        for cultural relations and educational opportunities. All rights
+        reserved */}
+      </p>
+      <div className="z-50 bg-slate-950 text-neutral-100 lg:h-20 w-screen flex flex-col gap-y-5 lg:flex-row px-20 items-center justify-between py-5 lg:py-0 ">
         {" "}
-        <p className="leading-7 [&:not(:first-child)]:mt-6">
+        <p className="leading-7 [&:not(:first-child)]:mt-6 ">
           Powered by Entab: <a href="https://lviscampuscare.org">CampusCare</a>
         </p>
-        <p className="leading-7 ">
-          This is just a parody.The two logos, the media used in the website, and other related terms to Lotus Valley are property of Lotus Valley School, Gurgaon. All rights reserved.
+        <p className="leading-7  text-neutral-100 z-10">
+          &copy; Jayan Sunil, 2024
         </p>
         <p className="leading-7 ">
           Designed and Developed by:{" "}

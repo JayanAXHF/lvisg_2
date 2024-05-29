@@ -1,3 +1,5 @@
+import { awards } from "./awards";
+
 export const navItems = [
   {
     title: "About LVISG",
@@ -5,15 +7,18 @@ export const navItems = [
       {
         name: "About Us",
         description: "At LVISG, we believe in making future-ready children",
+        href: "/about/lvis",
       },
       {
         name: "Learning Approach",
         description:
           "We believe that a good pedagogy is essential for child growth",
+        href: "/about/management",
       },
       {
         name: "Virtual Tour",
         description: "Get a full 360&deg; tour of the school",
+        href: "",
       },
     ],
   },
@@ -23,11 +28,13 @@ export const navItems = [
       {
         name: "News & Events",
         description: "A compilation of the latest events and news from LVISG",
+        href: "",
       },
       {
         name: "VISTAS",
         description:
           "Lotus Valley's exceptional Career Counselling & University Placement Cell",
+        href: "",
       },
     ],
   },
@@ -37,26 +44,32 @@ export const navItems = [
       {
         name: "Wall of Fame",
         description: "A compilation of LVISG&apos;s best students",
+        href: "",
       },
       {
         name: "I-Card",
         description: "Click here to upload your details for the I-Card",
+        href: "",
       },
       {
         name: "Admissions",
         description: "Information related to the admission process",
+        href: "",
       },
       {
         name: "ENTAB Portal",
         description: "Click here to go to the student ENTAB Portal",
+        href: "",
       },
       {
         name: "CBSE Circulars",
         description: "Official circulars sent to the school by CBSE",
+        href: "",
       },
       {
         name: "CBSE Results",
         description: "Results for class X & XII board exams",
+        href: "",
       },
     ],
   },
@@ -66,10 +79,12 @@ export const navItems = [
       {
         name: "NEP 2020",
         description: "LVISG marches towards NEP 2020",
+        href: "",
       },
       {
         name: "Mandatory Public Disclosure",
         description: "Certifications, regulations and CBSE results",
+        href: "",
       },
     ],
   },
@@ -89,3 +104,5 @@ export const bannerCards = [
   { src: "/carousel/banner-21524-4.jpg" },
   { src: "/carousel/banner-21524-34.jpg" },
 ];
+
+export { awards };

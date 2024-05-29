@@ -4,6 +4,7 @@ import {
   Menu,
   MenuItem,
   ProductItem,
+  HoveredLink,
 } from "@/components/ui/aceternity-nav-menu";
 import { cn } from "@/utils/cn";
 import { navItems } from "@/data";
@@ -18,6 +19,7 @@ export default function LgNavbar({ className }: { className?: string }) {
       )}
     >
       <Menu setActive={setActive}>
+        <HoveredLink href="/">Home</HoveredLink>{" "}
         {navItems.map((item, index) => {
           return (
             <MenuItem
@@ -34,7 +36,7 @@ export default function LgNavbar({ className }: { className?: string }) {
                         .replace("&amp;", "&")
                         .replace("&apos;", "'")}
                       key={index}
-                      href="/asdas"
+                      href={subItem.href}
                       description={subItem.description}
                     />
                   );

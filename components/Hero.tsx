@@ -4,12 +4,20 @@ import React from "react";
 import { Highlight } from "@/components/ui/hero-highlight";
 import { BackgroundBeams } from "./ui/background-beams";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Hero() {
   return (
     <div className="lg:h-screen h-[48rem] w-full  bg-neutral-50 relative flex flex-col items-center justify-center antialiased overflow-x-hidden">
       <BackgroundBeams />
-      <div className="max-w-2xl mx-auto p-4">
+      <div className="max-w-2xl w-full mx-auto p-4 grid grid-flow-row gap-y-1 justify-center justify-items-center">
+        <Image
+          src="/logo_green-removebg-preview.png"
+          alt="school logo"
+          className="w-72 mb-10 h-auto text-center"
+          width={1000}
+          height={900}
+        />
         <h1 className="relative  md:text-7xl  bg-clip-text text-transparent bg-gradient-to-b from-neutral-600 text-5xl to-neutral-900  text-center font-sans font-bold">
           Going{" "}
           <Highlight className="text-black dark:text-white">beyond</Highlight>{" "}

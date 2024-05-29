@@ -25,7 +25,7 @@ export default function Navbar() {
   const [nepCollapsible, setNepCollapsible] = React.useState<boolean>(false);
   return (
     <>
-      <header className="flex absolute z-10 top-0 py-10 w-full shrink-0 items-center px-4 md:px-6  lg:px-20 overflow-x-hidden lg:hidden !overflow-y-auto">
+      <header className="flex absolute z-10 top-0 py-10 w-full shrink-0 items-center px-4 md:px-6 left-0  lg:px-20 overflow-x-hidden lg:hidden !overflow-y-auto">
         <ScrollArea className="!overflow-y-scroll">
           <Sheet>
             <div className="flex items-center w-full justify-between">
@@ -90,12 +90,13 @@ export default function Navbar() {
                       <CollapsibleContent className="space-y-2">
                         {item.subItems.map((subItem, index) => {
                           return (
-                            <div
+                            <Link
                               className="rounded-md border px-4 py-2  text-sm shadow-sm"
                               key={index}
+                              href={subItem.href}
                             >
                               {subItem.name}
-                            </div>
+                            </Link>
                           );
                         })}
                       </CollapsibleContent>
@@ -108,33 +109,6 @@ export default function Navbar() {
         </ScrollArea>
 
         <nav className="ml-auto gap-6">
-          {/* <NavigationMenu>
-              <NavigationMenuList>
-                {navItems.map((item, index) => {
-                  return (
-                    <NavigationMenuItem key={index}>
-                      <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
-                      <NavigationMenuContent>
-                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[500px] ">
-                          {item.subItems.map((subItem, index) => {
-                            return (
-                              <ListItem
-                                key={index}
-                                title={subItem.name}
-                                href={""}
-                              >
-                                {subItem.description}
-                              </ListItem>
-                            );
-                          })}
-                        </ul>
-                      </NavigationMenuContent>
-                    </NavigationMenuItem>
-                  );
-                })}
-              </NavigationMenuList>
-            </NavigationMenu> */}
-
           <Meteors number={50} className="z-50" />
         </nav>
         <Meteors number={50} />
