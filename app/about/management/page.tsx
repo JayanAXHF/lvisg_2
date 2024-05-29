@@ -339,7 +339,10 @@ const Page = () => {
             <div className="flex flex-col gap-y-10">
               {advisoryBoardMembers.map((member, idx) => {
                 return (
-                  <WobbleCard containerClassName=" *:text-black min-h-[500px] lg:min-h-[600px] xl:min-h-[300px]  lg:bg-neutral-200/[0.7] text-white z-10 items-start py-0">
+                  <WobbleCard
+                    containerClassName=" *:text-black min-h-[500px] lg:min-h-[600px] xl:min-h-[300px]  lg:bg-neutral-200/[0.7] text-white z-10 items-start py-0"
+                    key={idx}
+                  >
                     <div className="w-full grid lg:grid-flow-col grid-cols-3 min-h-[500px] lg:min-h-[600px] xl:min-h-[300px] items-center content-center">
                       <div className="col-span-1 w-full h-full ">
                         <Image
