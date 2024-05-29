@@ -1,6 +1,7 @@
 "use client";
 import { cn } from "@/utils/cn";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 export const HeroWithImage = ({
@@ -39,6 +40,7 @@ export const HeroWithImage = ({
       <img
         src={src}
         className="image h-full w-full absolute inset-0 object-cover object-center"
+        alt="bg-image"
       />
     </div>
   );

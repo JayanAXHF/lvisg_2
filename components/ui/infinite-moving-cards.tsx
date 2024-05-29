@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 export const InfiniteMovingCards = ({
@@ -89,7 +90,15 @@ export const InfiniteMovingCards = ({
             }}
             key={idx}
           >
-            <img src={item.src} className="w-full aspect-auto rounded-2xl " />
+            <Image
+              alt="slider image"
+              src={item.src}
+              className="w-full aspect-auto rounded-2xl "
+              width={1}
+              height={1}
+              sizes="100%"
+              layout="responsive"
+            />
           </li>
         ))}
       </ul>

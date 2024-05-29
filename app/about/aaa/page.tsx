@@ -13,22 +13,7 @@ import Image from "next/image";
 import LgNavbar from "@/components/LgNavbar";
 import Navbar from "@/components/Navbar";
 import { WobbleCard } from "@/components/ui/wobblecard";
-import advisoryBoardMembers from "@/data/advisoryBoardMembers";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-import { Slash, ChevronDown } from "lucide-react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+
 import Link from "next/link";
 import AboutBreadcrum from "@/components/AboutBreadcrum";
 import { awards } from "@/data";
@@ -42,7 +27,7 @@ const Page = () => {
       <span className="flex lg:hidden">
         <Navbar />
       </span>
-      <HeroWithImage className="h-[50rem]" src="/awards/banner-awards.jpg">
+      <HeroWithImage className="h-[50rem]" src="/awards/banner-awards.webp">
         <motion.div className="z-50 flex flex-col justify-center items-center">
           <motion.p className="font-bold text-xl md:text-6xl text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-300 py-4">
             <Highlight className="text-white">

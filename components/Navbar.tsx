@@ -14,6 +14,7 @@ import { navItems } from "@/data";
 
 import { MenuIcon } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import Image from "next/image";
 
 export default function Navbar() {
   const [aboutCollapsible, setAboutCollapsible] =
@@ -35,18 +36,22 @@ export default function Navbar() {
                   <span className="sr-only">Toggle navigation menu</span>
                 </Button>
               </SheetTrigger>
-              <img
+              <Image
                 src={"/logo_green.jpg"}
                 alt="school logo"
                 className="aspect-auto h-16 hidden"
+                width={100}
+                height={100}
               />
             </div>
             <SheetContent side="left">
               <Link className="mr-6 lg:hidden " href="#">
-                <img
+                <Image
                   src={"/logo_green.jpg"}
                   alt="school logo"
                   className="aspect aspect-auto h-16"
+                  width={100}
+                  height={100}
                 />
                 <span className="sr-only">
                   Lotus Valley International School Gurugram

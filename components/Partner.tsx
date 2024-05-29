@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const Partner = () => {
   return (
@@ -8,21 +9,33 @@ const Partner = () => {
       </h2>
 
       <div className="max-w-7xl py-5 h-max px-10 flex md:flex-row   flex-col gap-y-10 gap-x-20">
-        <img
+        <Image
           src="/partner/L032-IDS_Final-2020-23-01.jpg"
           className="lg:h-36 h-16 md:h-24 w-auto border-2 border-slate-600"
+          alt="partner logo"
+          width={100}
+          height={100}
         />
-        <img
+        <Image
           src="/partner/ucas.jpg"
           className="lg:h-36 h-16 md:h-24 w-auto border-2 border-slate-600"
+          alt="partner logo"
+          width={100}
+          height={100}
         />
-        <img
+        <Image
           src="/partner/WCRC.jpg"
           className="lg:h-36 h-16 md:h-24 w-auto border-2 border-slate-600"
+          alt="partner logo"
+          width={100}
+          height={100}
         />
-        <img
+        <Image
           src="/partner/fis.png"
           className="lg:h-36 h-16 md:h-24 w-auto border-2 border-slate-600"
+          alt="partner logo"
+          width={100}
+          height={100}
         />
       </div>
     </div>

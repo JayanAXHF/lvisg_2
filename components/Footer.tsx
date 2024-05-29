@@ -5,6 +5,7 @@ const Boxes = dynamic(() => import("./ui/background-boxes"), {
 });
 import { WobbleCard } from "./ui/wobblecard";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -14,7 +15,11 @@ export default function Footer() {
         <Boxes className="hidden lg:flex" />
         <div className="w-full px-10 h-full py-10 grid lg:grid-cols-8 grid-flow-row  justify-between gap-x-5 items-center ">
           <div className="h-full lg:col-span-3 z-50 ">
-            <img className="h-auto w-auto" src="/logo_white.png" />
+            <img
+              alt="school logo"
+              className="h-auto w-auto"
+              src="/logo_white.png"
+            />
           </div>
           <div className="lg:col-span-5 grid lg:grid-cols-4 gap-x-10 lg:grid-flow-row gap-y-8">
             <div className="col-span-2">
