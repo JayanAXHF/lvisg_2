@@ -23,7 +23,11 @@ export default function RootLayout({
       <Head>
         <title>My App</title>
         <Partytown debug={true} forward={["dataLayer.push"]} />
-        <Script src="https://example.com/analytics.js" type="text/partytown" />
+        <script
+          src="https://example.com/analytics.js"
+          type="text/partytown"
+          defer
+        />
       </Head>
       <body className={inter.className}>{children}</body>
     </html>
