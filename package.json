@@ -4,11 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run partytown && next build",
+    "partytown": "partytown copylib public/~partytown",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@builder.io/partytown": "^0.10.2",
     "@million/lint": "^1.0.0-rc.13",
     "@radix-ui/react-collapsible": "^1.0.3",
     "@radix-ui/react-dialog": "^1.0.5",
