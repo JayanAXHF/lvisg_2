@@ -18,11 +18,6 @@ import { Partytown } from "@builder.io/partytown/react";
 const Page = () => {
   return (
     <React.Fragment>
-      <Head>
-        <title>My App</title>
-        <Partytown debug={true} forward={["dataLayer.push"]} />
-        <script src="https://example.com/analytics.js" type="text/partytown" />
-      </Head>
       <div className="min-h-screen w-full  dark:bg-black bg-white  dark:bg-dot-white/[0.09] bg-dot-black/[0.1] relative flex items-center justify-center flex-col overflow-x-none">
         <span className="hidden lg:flex *:z-50">
           <LgNavbar />
