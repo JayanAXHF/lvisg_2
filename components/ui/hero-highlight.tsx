@@ -60,7 +60,7 @@ export const HeroHighlight = ({
   );
 };
 
-export const Highlight = ({
+const Highlight = ({
   children,
   className,
 }: {
@@ -94,3 +94,5 @@ export const Highlight = ({
     </motion.span>
   );
 };
+
+export default Highlight;

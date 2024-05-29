@@ -1,12 +1,20 @@
 "use client";
 
-import Cards from "@/components/Cards";
-import Footer from "@/components/Footer";
-import Hero from "@/components/Hero";
-import ImageSlider from "@/components/ImageSlider";
-import LgNavbar from "@/components/LgNavbar";
-import Navbar from "@/components/Navbar";
-import Partner from "@/components/Partner ";
+import dynamic from "next/dynamic";
+
+const Hero = dynamic(() => import("@/components/Hero"), {
+  loading: () => <p>Loading...</p>,
+});
+const Cards = dynamic(() => import("../components/Cards"));
+const Footer = dynamic(() => import("../components/Footer"));
+const ImageSlider = dynamic(() => import("../components/ImageSlider"), {
+  ssr: false,
+});
+const LgNavbar = dynamic(() => import("../components/LgNavbar"), {
+  ssr: false,
+});
+const Navbar = dynamic(() => import("../components/Navbar"), { ssr: false });
+const Partner = dynamic(() => import("../components/Partner"), { ssr: false });
 
 export default function Home() {
   return (

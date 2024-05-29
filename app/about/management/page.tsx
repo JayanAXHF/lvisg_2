@@ -3,7 +3,10 @@
 import { HeroWithImage } from "@/components/ui/hero-image";
 import { motion } from "framer-motion";
 import React from "react";
-import { Highlight } from "@/components/ui/hero-highlight";
+import dynamic from "next/dynamic";
+const Highlight = dynamic(() => import("@/components/ui/hero-highlight"), {
+  ssr: true,
+});
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import Footer from "@/components/Footer";
 import Image from "next/image";
@@ -54,20 +57,22 @@ const Page = () => {
             Management
           </h2>
 
-          <div className="dp-message mb-10 w-full ">
+          <div className="dp-message mb-10 w-full">
             <h3 className="mt-8 mb-5 scroll-m-20 text-2xl font-semibold tracking-tight">
               Director-Principal&apos;s Message
             </h3>
-            <div className="w-full  grid lg:grid-flow-col grid-flow-row lg:grid-cols-3 grid-rows-4 lg:gap-x-10 h-max">
-              <div className="col-span-1 row-span-1 w-full h-full">
-                <img
+            <div className="w-full grid lg:!grid-flow-col  lg:grid-cols-3  lg:gap-x-10 h-max grid-flow-row  lg:grid-rows-1 grid-cols-1">
+              <div className="lg:!col-span-1 row-span-1 ">
+                <Image
                   src={"/management/director-principal.jpg"}
                   alt="director-principal's photo"
-                  className="lg:w-full w-auto h-auto aspect-auto lg:h-auto rounded-xl"
+                  className="lg:!w-full w-auto h-auto aspect-auto lg:h-auto rounded-xl"
+                  width={467}
+                  height={467}
                 />
               </div>
 
-              <span className="col-span-2 h-max row-span-3">
+              <span className="lg:!col-span-2 h-max row-span-1">
                 <p className="leading-7 [&:not(:first-child)]:mt-6 font-bold">
                   Mrs Anita Malhotra
                 </p>
@@ -141,19 +146,21 @@ const Page = () => {
             <h2 className="mb-10  scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
               Vice-Principal&apos;s Message
             </h2>
-            <div className="w-full grid grid-flow-col grid-cols-3 gap-x-10">
-              <Image
-                src={"/management/vice-principal.jpg"}
-                width={467}
-                height={467}
-                alt="vision photo"
-                className="w-full aspect-auto rounded-xl"
-              />
+            <div className="w-full grid lg:!grid-flow-col  lg:grid-cols-3  lg:gap-x-10 h-max grid-flow-row  lg:grid-rows-1 grid-cols-1 gap-y-10">
+              <div className="lg:!col-span-1 row-span-1 ">
+                <Image
+                  src={"/management/vice-principal.jpg"}
+                  width={467}
+                  height={467}
+                  alt="Vp Photo"
+                  className="lg:!w-full w-full h-auto aspect-auto lg:h-auto rounded-xl"
+                />
+              </div>
               <span className="col-span-2">
                 <p className="leading-7 [&:not(:first-child)]:mt-6 ">
                   <b> Mrs Ruchi Joshi</b>
                 </p>
-                <p className="leading-7 [&:not(:first-child)]:mt-6">
+                <p className="leading-7">
                   Mrs Ruchi Joshi&apos;s teaching career of almost fourteen
                   years has been shaped through experiences at various
                   institutions across the country. Prior to joining Lotus
@@ -206,14 +213,16 @@ const Page = () => {
             <h2 className="mb-10  scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
               Vice-Principal&apos;s Message (Middle and Primary Wing)
             </h2>
-            <div className="w-full grid grid-flow-col grid-cols-3 gap-x-10">
-              <Image
-                src={"/management/primary-wing-head-mistress.jpg"}
-                width={467}
-                height={467}
-                alt="vision photo"
-                className="w-full aspect-auto rounded-xl"
-              />
+            <div className="w-full grid lg:!grid-flow-col  lg:grid-cols-3  lg:gap-x-10 h-max grid-flow-row  lg:grid-rows-1 grid-cols-1 gap-y-10">
+              <div className="lg:!col-span-1 row-span-1 ">
+                <Image
+                  src={"/management/primary-wing-head-mistress.jpg"}
+                  width={467}
+                  height={467}
+                  alt="Vppm Photo"
+                  className="lg:!w-full w-full h-auto aspect-auto lg:h-auto rounded-xl"
+                />
+              </div>
               <span className="col-span-2">
                 <p className="leading-7 [&:not(:first-child)]:mt-6 ">
                   <b> Ms Ritu Jawa</b>
@@ -261,14 +270,16 @@ const Page = () => {
             <h2 className="mb-10 mt-5  scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
               Patron&apos;s Message
             </h2>
-            <div className="w-full grid grid-flow-col grid-cols-3 gap-x-10">
-              <Image
-                src={"/management/patrons.jpg"}
-                width={467}
-                height={467}
-                alt="vision photo"
-                className="w-full aspect-auto rounded-xl"
-              />
+            <div className="w-full grid lg:!grid-flow-col  lg:grid-cols-3  lg:gap-x-10 h-max grid-flow-row  lg:grid-rows-1 grid-cols-1 gap-y-10">
+              <div className="lg:!col-span-1 row-span-1 ">
+                <Image
+                  src={"/management/patrons.jpg"}
+                  width={467}
+                  height={467}
+                  alt="vision photo"
+                  className="w-full aspect-auto rounded-xl"
+                />
+              </div>
               <span className="col-span-2">
                 <p className="leading-7 [&:not(:first-child)]:mt-6 ">
                   <b> Dr Shayama Chona</b>
@@ -339,33 +350,35 @@ const Page = () => {
             <div className="flex flex-col gap-y-10">
               {advisoryBoardMembers.map((member, idx) => {
                 return (
-                  <WobbleCard
-                    containerClassName=" *:text-black min-h-[500px] lg:min-h-[600px] xl:min-h-[300px]  lg:bg-neutral-200/[0.7] text-white z-10 items-start py-0"
-                    key={idx}
-                  >
-                    <div className="w-full grid lg:grid-flow-col grid-cols-3 min-h-[500px] lg:min-h-[600px] xl:min-h-[300px] items-center content-center">
-                      <div className="col-span-1 w-full h-full ">
-                        <Image
-                          width={300}
-                          height={300}
-                          src={member.img}
-                          alt={member.name}
-                          className=" h-80 rounded-xl"
-                        />
+                  <>
+                    <WobbleCard
+                      containerClassName=" *:text-neutral-950 max-w-2xl lg:max-w-full mix-h-[500px]  lg:min-h-[600px] xl:min-h-[300px] bg-neutral-200/[0.7] text-white z-10 items-start py-0 px-0"
+                      key={idx}
+                    >
+                      <div className="w-full grid lg:grid-flow-col grid-flow-row lg:grid-cols-3 min-h-[500px] lg:min-h-[600px] xl:min-h-[300px] items-center content-center gap-5 justify-items-center">
+                        <div className="lg:col-span-1 w-full h-full ">
+                          <Image
+                            width={500}
+                            height={500}
+                            src={`${member.img}`}
+                            alt={member.name}
+                            className=" h-full rounded-xl lg:h-auto lg:w-auto  w-full min-w-full "
+                          />
+                        </div>
+                        <div className="lg:col-span-2 w-full h-full lg:flex lg:justify-center lg:flex-col">
+                          <h3 className="scroll-m-20 text-2xl font-bold tracking-tight">
+                            {member.name}
+                          </h3>
+                          <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">
+                            {member.designation}
+                          </h4>
+                          <p className="leading-7 [&:not(:first-child)]:mt-6">
+                            {member.explainer}
+                          </p>
+                        </div>
                       </div>
-                      <div className="col-span-2 w-full h-full">
-                        <h3 className="scroll-m-20 text-2xl font-bold tracking-tight">
-                          {member.name}
-                        </h3>
-                        <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">
-                          {member.designation}
-                        </h4>
-                        <p className="leading-7 [&:not(:first-child)]:mt-6">
-                          {member.explainer}
-                        </p>
-                      </div>
-                    </div>
-                  </WobbleCard>
+                    </WobbleCard>
+                  </>
                 );
               })}
             </div>

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import React from "react";
 import { ImagesSlider } from "./ui/image-slider";
 import Link from "next/link";
-import { Highlight } from "./ui/hero-highlight";
+import Highlight from "./ui/hero-highlight";
 
 const ImageSlider = () => {
   const images = [

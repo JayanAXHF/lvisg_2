@@ -1,7 +1,10 @@
 "use client";
 import React from "react";
-import { Boxes } from "@/components/ui/background-boxes";
+const Boxes = dynamic(() => import("./ui/background-boxes"), {
+  ssr: false,
+});
 import { WobbleCard } from "./ui/wobblecard";
+import dynamic from "next/dynamic";
 
 export default function Footer() {
   return (
@@ -57,16 +60,12 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <p className="leading-7 text-xs text-neutral-100 z-10 lg:px-0 px-10 py-2">
+      <p className="leading-7 text-xs text-center text-neutral-100 z-10 lg:px-0 px-10 py-2">
         This is just a parody. The Lotus Valley International School logos,
         including any variations with green or white text, the media used on the
         website, and other terms related to Lotus Valley School, Gurgaon are the
         intellectual property of Lotus Valley School, Gurgaon. All rights
         reserved.{" "}
-        {/* The image for the International Dimension in Schools is the
-        intellectual property of The United Kingdom's international organisation
-        for cultural relations and educational opportunities. All rights
-        reserved */}
       </p>
       <div className="z-50 bg-slate-950 text-neutral-100 lg:h-20 w-screen flex flex-col gap-y-5 lg:flex-row px-20 items-center justify-between py-5 lg:py-0 ">
         {" "}

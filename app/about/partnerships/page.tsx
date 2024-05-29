@@ -10,7 +10,7 @@ import { WobbleCard } from "@/components/ui/wobblecard";
 import advisoryBoardMembers from "@/data/advisoryBoardMembers";
 import { motion } from "framer-motion";
 import React from "react";
-import { Highlight } from "@/components/ui/hero-highlight";
+import Highlight from "@/components/ui/hero-highlight";
 import Image from "next/image";
 
 const page = () => {
@@ -33,8 +33,8 @@ const page = () => {
             </motion.p>
           </motion.div>
         </HeroWithImage>
-        <TracingBeam className="px-6 w-[90%] flex justify-center mb-20">
-          <div className="w-[1401px]  px-20  pt-20">
+        <TracingBeam className="lg:px-6 w-[90%] flex justify-center mb-20">
+          <div className="lg:w-[1401px]  lg:px-20  pt-20">
             <div className=" text-left w-full">
               <AboutBreadcrum aboutPage={"Partnerships"} />
             </div>
@@ -52,7 +52,7 @@ const page = () => {
                 challenging. It is the new reality.
                 <br />- John B Larsen
               </blockquote>{" "}
-              <div className="w-full grid grid-flow-col grid-cols-3 gap-x-10">
+              <div className="w-full grid lg:!grid-flow-col  lg:grid-cols-3  lg:gap-x-10 h-max grid-flow-row  lg:grid-rows-1 grid-cols-1">
                 <span className="col-span-2">
                   <p className="leading-7 [&:not(:first-child)]:mt-6 ">
                     Globalization 1.0 began around 1492, and the world went from
@@ -99,7 +99,7 @@ const page = () => {
                 through Skype sessions. The prospects of our learners would be
                 in best hands with a guarantee of a lucrative future.
               </p>
-              <div className="w-full grid grid-flow-col grid-cols-3 gap-x-10 mb-6">
+              <div className="w-full grid lg:!grid-flow-col  lg:grid-cols-3  lg:gap-x-10 h-max grid-flow-row  lg:grid-rows-1 grid-cols-1">
                 <Image
                   src={"/partnerships/th1.jpg"}
                   width={467}
@@ -144,7 +144,7 @@ const page = () => {
                   </p>
                 </span>
               </div>{" "}
-              <div className="w-full grid grid-flow-col grid-cols-3 gap-x-10">
+              <div className="w-full grid lg:!grid-flow-col  lg:grid-cols-3  lg:gap-x-10 h-max grid-flow-row  lg:grid-rows-1 grid-cols-1">
                 <span className="col-span-2">
                   <p className="leading-7 [&:not(:first-child)]:mt-6 ">
                     Discussion over partnership was held in July, 2016, between

@@ -18,7 +18,7 @@ import Link from "next/link";
 
 const AboutBreadcrum = ({ aboutPage }: { aboutPage: String }) => {
   return (
-    <div>
+    <div className="z-10">
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>

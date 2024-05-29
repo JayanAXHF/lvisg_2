@@ -1,10 +1,13 @@
 "use client";
 import React from "react";
-
-import { Highlight } from "@/components/ui/hero-highlight";
-import { BackgroundBeams } from "./ui/background-beams";
 import Link from "next/link";
 import Image from "next/image";
+
+import dynamic from "next/dynamic";
+const Highlight = dynamic(() => import("@/components/ui/hero-highlight")); // Adjust ssr as needed
+const BackgroundBeams = dynamic(() => import("./ui/background-beams"), {
+  ssr: true,
+}); // Likely needs SSR
 
 export default function Hero() {
   return (
@@ -37,7 +40,11 @@ export default function Hero() {
             </Link>
           </button>
           <button className="px-6 py-2 rounded-md h-12 border border-neutral-600 text-black bg-white cursor-pointer hover:bg-gray-100 transition duration-200">
-            <Link href="/about" className="cursor-pointer ">
+            <Link
+              href="/about/lvis"
+              className="cursor-pointer "
+              prefetch={false}
+            >
               About Us
             </Link>
           </button>

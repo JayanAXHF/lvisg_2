@@ -3,7 +3,10 @@
 import { HeroWithImage } from "@/components/ui/hero-image";
 import { motion } from "framer-motion";
 import React from "react";
-import { Highlight } from "@/components/ui/hero-highlight";
+import dynamic from "next/dynamic";
+const Highlight = dynamic(() => import("@/components/ui/hero-highlight"), {
+  ssr: true,
+});
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import Footer from "@/components/Footer";
 import Image from "next/image";
@@ -27,8 +30,8 @@ const Page = () => {
           </motion.p>
         </motion.div>
       </HeroWithImage>
-      <TracingBeam className="px-6 w-[90%] flex justify-center mb-10">
-        <div className="w-[1401px]  px-20  py-20">
+      <TracingBeam className="lg:px-6 w-[90%] flex justify-center mb-10">
+        <div className="lg:w-[1401px]  lg:px-20  py-20">
           <div className=" text-left w-full">
             <AboutBreadcrum aboutPage={"About Us"} />
           </div>
@@ -37,8 +40,8 @@ const Page = () => {
           </h2>
 
           <div className="vision mb-10">
-            <div className="w-full grid grid-flow-col grid-cols-3">
-              <span className="col-span-2">
+            <div className="w-full grid lg:!grid-flow-col  lg:grid-cols-3  lg:gap-x-10 h-max grid-flow-row  lg:grid-rows-1 grid-cols-1">
+              <span className="col-span-2 w-full">
                 <p className="leading-7 [&:not(:first-child)]:mt-6 ">
                   At Lotus Valley International School, Gurugram, we aspire to
                   craft socially conscious, self-aware and responsible global
@@ -73,13 +76,15 @@ const Page = () => {
                   their innate potential.
                 </p>
               </span>
-              <Image
-                src={"/vision1668497851.jpg"}
-                width={467}
-                height={467}
-                alt="vision photo"
-                className="h-full aspect-[4/3] rounded-xl"
-              />
+              <div className="w-full h-full lg:col-span-1">
+                <Image
+                  src={"/vision1668497851.jpg"}
+                  width={467}
+                  height={467}
+                  alt="vision photo"
+                  className="h-full aspect-auto rounded-xl lg:w-auto w-full"
+                />
+              </div>
             </div>
             <p className="leading-7 [&:not(:first-child)]:mt-6">
               The goal is to create accomplished, intrinsically motivated
@@ -125,7 +130,7 @@ const Page = () => {
             <h2 className="mb-10  scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
               School Emblem
             </h2>
-            <div className="w-full grid grid-flow-col grid-cols-3 gap-x-10">
+            <div className="w-full grid lg:!grid-flow-col  lg:grid-cols-3  lg:gap-x-10 h-max grid-flow-row  lg:grid-rows-1 grid-cols-1 gap-y-6">
               <Image
                 src={"/school_emblem.jpg"}
                 width={467}
@@ -193,7 +198,7 @@ const Page = () => {
             <h2 className="mb-10  scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
               Avant-Garde Philosophy
             </h2>
-            <div className="w-full grid grid-flow-col grid-cols-3">
+            <div className="w-full grid lg:!grid-flow-col  lg:grid-cols-3  lg:gap-x-10 h-max grid-flow-row lg:grid-rows-1 grid-cols-1 gap-y-6">
               <span className="col-span-2">
                 <blockquote className="border-l-2 pl-6 italic">
                   &apos;&apos;Education should bring to light the ideal of the

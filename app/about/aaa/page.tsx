@@ -3,7 +3,10 @@
 import { HeroWithImage } from "@/components/ui/hero-image";
 import { motion } from "framer-motion";
 import React from "react";
-import { Highlight } from "@/components/ui/hero-highlight";
+import dynamic from "next/dynamic";
+const Highlight = dynamic(() => import("@/components/ui/hero-highlight"), {
+  ssr: true,
+});
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import Footer from "@/components/Footer";
 import Image from "next/image";

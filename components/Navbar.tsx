@@ -54,6 +54,12 @@ export default function Navbar() {
               </Link>
 
               <div className="lg:hidden gap-6 flex flex-col py-6">
+                <Link
+                  className="flex items-center justify-between space-x-4 "
+                  href="/"
+                >
+                  <h4 className="text-sm font-semibold">Home</h4>
+                </Link>
                 {navItems.map((item, index) => {
                   return (
                     <Collapsible
@@ -78,7 +84,7 @@ export default function Navbar() {
                       }
                       className="w-4/5 space-y-2"
                     >
-                      <div className="flex items-center justify-between space-x-4 px-4">
+                      <div className="flex items-center justify-between space-x-4 ">
                         <h4 className="text-sm font-semibold">{item.title}</h4>
                         <CollapsibleTrigger asChild>
                           <Button variant="ghost" size="sm">
@@ -87,7 +93,7 @@ export default function Navbar() {
                           </Button>
                         </CollapsibleTrigger>
                       </div>
-                      <CollapsibleContent className="space-y-2">
+                      <CollapsibleContent className="space-y-2 flex flex-col">
                         {item.subItems.map((subItem, index) => {
                           return (
                             <Link
