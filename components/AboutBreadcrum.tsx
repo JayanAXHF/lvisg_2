@@ -46,9 +46,15 @@ const AboutBreadcrum = ({ aboutPage }: { aboutPage: String }) => {
                 <DropdownMenuItem asChild>
                   <Link href="/about/aaa">Awards &amp; Achievements</Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem>Faculty</DropdownMenuItem>
-                <DropdownMenuItem>Staff Details</DropdownMenuItem>
-                <DropdownMenuItem>School Strength</DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link href="/about/faculty">Faculty</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link href="/about/staff_details">Staff Details</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link href="/about/strength">School Strength</Link>
+                </DropdownMenuItem>
                 <DropdownMenuItem>Gallery</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>

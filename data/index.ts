@@ -36,6 +36,11 @@ export const navItems = [
           "Lotus Valley's exceptional Career Counselling & University Placement Cell",
         href: "",
       },
+      {
+        name: "School Calendar",
+        description: "A list of future school events",
+        href: "/events/calendar",
+      },
     ],
   },
   {
