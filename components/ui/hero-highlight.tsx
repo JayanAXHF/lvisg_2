@@ -12,7 +12,9 @@ export const HeroHighlight = ({
   className?: string;
   containerClassName?: string;
 }) => {
+  // eslint-disable-next-line
   let mouseX = useMotionValue(0);
+  // eslint-disable-next-line
   let mouseY = useMotionValue(0);
 
   function handleMouseMove({
