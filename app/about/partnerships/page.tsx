@@ -6,8 +6,6 @@ import LgNavbar from "@/components/LgNavbar";
 import Navbar from "@/components/Navbar";
 import { HeroWithImage } from "@/components/ui/hero-image";
 import { TracingBeam } from "@/components/ui/tracing-beam";
-import { WobbleCard } from "@/components/ui/wobblecard";
-import advisoryBoardMembers from "@/data/advisoryBoardMembers";
 import { motion } from "framer-motion";
 import React from "react";
 import Highlight from "@/components/ui/hero-highlight";
@@ -16,8 +14,8 @@ import Image from "next/image";
 const page = () => {
   return (
     <div>
-      <div className="min-h-screen w-full  dark:bg-black bg-white  dark:bg-dot-white/[0.09] bg-dot-black/[0.1] relative flex items-center justify-center flex-col overflow-x-none">
-        <span className="hidden lg:flex *:z-50">
+      <div className="relative flex min-h-screen w-full flex-col items-center justify-center bg-white bg-dot-black/[0.1] dark:bg-black dark:bg-dot-white/[0.09]">
+        <span className="hidden *:z-50 lg:flex">
           <LgNavbar />
         </span>{" "}
         <span className="flex lg:hidden">
@@ -27,15 +25,15 @@ const page = () => {
           className="h-[50rem]"
           src="/partnerships/banner-partnership.jpg"
         >
-          <motion.div className="z-50 flex flex-col justify-center items-center">
-            <motion.p className="font-bold text-xl md:text-6xl text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-300 py-4">
+          <motion.div className="z-50 flex flex-col items-center justify-center">
+            <motion.p className="bg-gradient-to-b from-neutral-50 to-neutral-300 bg-clip-text py-4 text-center text-xl font-bold text-transparent md:text-6xl">
               <Highlight className="text-white">Partnerships</Highlight>
             </motion.p>
           </motion.div>
         </HeroWithImage>
-        <TracingBeam className="lg:px-6 w-[90%] flex justify-center mb-20">
-          <div className="lg:w-[1401px]  lg:px-20  pt-20">
-            <div className=" text-left w-full">
+        <TracingBeam className="mb-20 flex w-[90%] justify-center lg:px-6">
+          <div className="pt-20 lg:w-[1401px] lg:px-20">
+            <div className="w-full text-left">
               <AboutBreadcrum aboutPage={"Partnerships"} />
             </div>
             <h2 className="my-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
@@ -43,18 +41,18 @@ const page = () => {
             </h2>
 
             <div className="dp-message mb-10">
-              <h3 className="mt-8 mb-5 scroll-m-20 text-2xl font-semibold tracking-tight">
+              <h3 className="mb-5 mt-8 scroll-m-20 text-2xl font-semibold tracking-tight">
                 Foreign partnerships
               </h3>
-              <blockquote className="border-l-2 pl-6 italic  mt-6 mb-6">
+              <blockquote className="my-6 border-l-2 pl-6 italic">
                 Globalization is not a monolithic force but an evolving set of
                 consequences. Some good, some thought-provoking and some
                 challenging. It is the new reality.
                 <br />- John B Larsen
               </blockquote>{" "}
-              <div className="w-full grid lg:!grid-flow-col  lg:grid-cols-3  lg:gap-x-10 h-max grid-flow-row  lg:grid-rows-1 grid-cols-1">
+              <div className="grid h-max w-full grid-flow-row grid-cols-1 lg:!grid-flow-col lg:grid-cols-3 lg:grid-rows-1 lg:gap-x-10">
                 <span className="col-span-2">
-                  <p className="leading-7 [&:not(:first-child)]:mt-6 ">
+                  <p className="leading-7 [&:not(:first-child)]:mt-6">
                     Globalization 1.0 began around 1492, and the world went from
                     size large to size medium. In Globalization 2.0, the era
                     that introduced us to multinational companies, it went from
@@ -62,7 +60,7 @@ const page = () => {
                     Globalization 3.0, in which the world went from being small
                     to tiny with the Globalization seeping into classrooms!
                   </p>
-                  <p className="leading-7 [&:not(:first-child)]:mt-6 ">
+                  <p className="leading-7 [&:not(:first-child)]:mt-6">
                     Lotus Valley International School not only takes pride in
                     its most modern infrastructure, but also in its invasion
                     into the global community intertwining the S.T.E.A.M
@@ -79,16 +77,16 @@ const page = () => {
                   width={467}
                   height={"100"}
                   alt="foreign collaboration"
-                  className="w-full h-auto rounded-xl col-span-1"
+                  className="col-span-1 h-auto w-full rounded-xl"
                 />
               </div>{" "}
-              <blockquote className="border-l-2 pl-6 italic  mt-6 mb-6">
+              <blockquote className="my-6 border-l-2 pl-6 italic">
                 &quot;A community that learns together, excels together. When we
                 learn and work together, we prosper together. We need to form
                 such communities that mutually benefit from each other and what
                 better can it be when these communities being global&quot;.
               </blockquote>{" "}
-              <p className="leading-7 [&:not(:first-child)]:mt-6 mb-6">
+              <p className="mb-6 leading-7 [&:not(:first-child)]:mt-6">
                 Our journey to global networking began in 2012 with our tie up
                 Brown University, an Ivy League Research University, Rhode
                 Island, United States. Brown University and Lotus Valley
@@ -99,16 +97,16 @@ const page = () => {
                 through Skype sessions. The prospects of our learners would be
                 in best hands with a guarantee of a lucrative future.
               </p>
-              <div className="w-full grid lg:!grid-flow-col  lg:grid-cols-3  lg:gap-x-10 h-max grid-flow-row  lg:grid-rows-1 grid-cols-1">
+              <div className="grid h-max w-full grid-flow-row grid-cols-1 lg:!grid-flow-col lg:grid-cols-3 lg:grid-rows-1 lg:gap-x-10">
                 <Image
                   src={"/partnerships/th1.jpg"}
                   width={467}
                   height={"100"}
                   alt="foreign collaboration"
-                  className="w-full h-auto rounded-xl col-span-1"
+                  className="col-span-1 h-auto w-full rounded-xl"
                 />
                 <span className="col-span-2">
-                  <p className="leading-7 [&:not(:first-child)]:mt-6 ">
+                  <p className="leading-7 [&:not(:first-child)]:mt-6">
                     Working for The International Award in 2013 brought us face
                     to face with The Ravensbourne School, Bromley in UK. The
                     association of Lotus Valley International School with The
@@ -123,14 +121,14 @@ const page = () => {
                     facilitators, Mr. David Jordan and Mrs. Andree Jordan, in
                     the month of Dec, 2015.
                   </p>
-                  <p className="leading-7 [&:not(:first-child)]:mt-6 ">
+                  <p className="leading-7 [&:not(:first-child)]:mt-6">
                     The ISA project also gave our learners an opportunity to
                     interact with Watphramahathat School, Nakhon Si Thammarat
                     province, Thailand. The learners worked on a project called
                     &apos;Families&apos; and exchanged views about the family
                     system in their societies.
                   </p>
-                  <p className="leading-7 [&:not(:first-child)]:mt-6 ">
+                  <p className="leading-7 [&:not(:first-child)]:mt-6">
                     In today&apos;s era, multilingualism has become more than
                     just &apos;important&apos;. Learning Mandarin is more than
                     learning a language, it enables us to explore one of the
@@ -144,9 +142,9 @@ const page = () => {
                   </p>
                 </span>
               </div>{" "}
-              <div className="w-full grid lg:!grid-flow-col  lg:grid-cols-3  lg:gap-x-10 h-max grid-flow-row  lg:grid-rows-1 grid-cols-1">
+              <div className="grid h-max w-full grid-flow-row grid-cols-1 lg:!grid-flow-col lg:grid-cols-3 lg:grid-rows-1 lg:gap-x-10">
                 <span className="col-span-2">
-                  <p className="leading-7 [&:not(:first-child)]:mt-6 ">
+                  <p className="leading-7 [&:not(:first-child)]:mt-6">
                     Discussion over partnership was held in July, 2016, between
                     Mrs. Anita Malhotra, Principal of Lotus Valley International
                     School, Gurgaon & Mr. Joachim Rohrer, Principal,{" "}
@@ -158,7 +156,7 @@ const page = () => {
                     the German students to Gurgaon in October, 2016 and
                     educational trip of our learners in May, 2017.
                   </p>
-                  <p className="leading-7 [&:not(:first-child)]:mt-6 ">
+                  <p className="leading-7 [&:not(:first-child)]:mt-6">
                     Lotus Valley is in the process of working-out
                     student-teachers’ exchange programme with Australian schools
                     and universities in collaboration with the Australian High
@@ -174,7 +172,7 @@ const page = () => {
                     by the visit of Ms Anjana Menon to Australia in mid-year,
                     2017.
                   </p>
-                  <p className="leading-7 [&:not(:first-child)]:mt-6 ">
+                  <p className="leading-7 [&:not(:first-child)]:mt-6">
                     India&apos;s talent has to play a larger role at an
                     International level and Indian Institutes have to prepare to
                     stay at the cutting edge of teaching technology. This can be
@@ -190,11 +188,11 @@ const page = () => {
                   width={467}
                   height={"100"}
                   alt="foreign collaboration"
-                  className="w-full h-auto rounded-xl col-span-1"
+                  className="col-span-1 h-auto w-full rounded-xl"
                 />
               </div>{" "}
             </div>
-            <blockquote className="border-l-2 pl-6 italic  mt-6 mb-6">
+            <blockquote className="my-6 border-l-2 pl-6 italic">
               &quot;The experiences are lovely, enriching and inspiring, But we
               have long journey to undertake, And miles to go before we
               rediscover, And miles to go before outcomes we garner &quot;.

@@ -1,8 +1,7 @@
 "use client";
 import { cn } from "@/utils/cn";
-import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 export const HeroWithImage = ({
   src,
@@ -24,8 +23,8 @@ export const HeroWithImage = ({
   return (
     <div
       className={cn(
-        "overflow-hidden h-full w-full relative flex items-center justify-center",
-        className
+        "relative flex size-full items-center justify-center overflow-hidden",
+        className,
       )}
       style={{
         perspective: "1000px",
@@ -34,12 +33,12 @@ export const HeroWithImage = ({
       {children}
       {overlay}
       <div
-        className={cn("absolute inset-0 bg-black/60 z-40", overlayClassName)}
+        className={cn("absolute inset-0 z-40 bg-black/60", overlayClassName)}
       />
 
-      <img
+      <Image
         src={src}
-        className="image h-full w-full absolute inset-0 object-cover object-center"
+        className="image absolute inset-0 size-full object-cover object-center"
         alt="bg-image"
       />
     </div>

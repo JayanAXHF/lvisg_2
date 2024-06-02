@@ -1,33 +1,35 @@
 "use client";
+// ----
 import React from "react";
-const Boxes = dynamic(() => import("./ui/background-boxes"), {
-  ssr: false,
-});
 import { WobbleCard } from "./ui/wobblecard";
 import dynamic from "next/dynamic";
 import Image from "next/image";
+const Boxes = dynamic(() => import("./ui/background-boxes"), {
+  ssr: false,
+});
+// ----
 
 export default function Footer() {
   return (
-    <div className="lg:h-[30rem] relative w-full overflow-hidden bg-lvis-red lg:bg-slate-900 flex flex-col items-center justify-center  ">
+    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden bg-lvis-red lg:h-[30rem] lg:bg-slate-900">
       <div className="grid grid-flow-row content-between py-0">
-        <div className="absolute inset-0 w-full h-full bg-lvis-red lg:bg-slate-900 z-10 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
+        <div className="pointer-events-none absolute inset-0 z-10 size-full bg-lvis-red [mask-image:radial-gradient(transparent,white)] lg:bg-slate-900" />
         <Boxes className="hidden lg:flex" />
-        <div className="w-full px-10 h-full py-10 grid lg:grid-cols-8 grid-flow-row  justify-between gap-x-5 items-center ">
-          <div className="h-full lg:col-span-3 z-50 ">
-            <img
+        <div className="grid size-full grid-flow-row items-center justify-between gap-x-5 p-10 lg:grid-cols-8">
+          <div className="z-50 h-full lg:col-span-3">
+            <Image
               alt="school logo"
-              className="h-auto w-auto"
+              className="size-auto"
               src="/logo_white.png"
             />
           </div>
-          <div className="lg:col-span-5 grid lg:grid-cols-4 gap-x-10 lg:grid-flow-row gap-y-8">
+          <div className="grid gap-x-10 gap-y-8 lg:col-span-5 lg:grid-flow-row lg:grid-cols-4">
             <div className="col-span-2">
               <WobbleCard containerClassName="col-span-1 lg:col-span-2 bg-yellow-800  lg:bg-teal-800/[0.7] text-white z-10 items-start py-0">
                 <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">
                   Quick Links
                 </h4>
-                <ul className="  list-none [&>li]:mt-2 ">
+                <ul className="list-none [&>li]:mt-2">
                   <li>Awards</li>
                   <li>eMagazine</li>
                   <li>Career</li>
@@ -41,7 +43,7 @@ export default function Footer() {
                 <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">
                   Contact Us
                 </h4>
-                <ul className="  list-none [&>li]:mt-2 ">
+                <ul className="list-none [&>li]:mt-2">
                   <li>
                     Lotus Valley International School, M-Block, South City-II,
                     <br />
@@ -65,22 +67,22 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <p className="leading-7 text-xs text-center text-neutral-100 z-10 lg:px-0 px-10 py-2">
+      <p className="z-10 px-10 py-2 text-center text-xs leading-7 text-neutral-100 lg:px-0">
         This is just a parody. The Lotus Valley International School logos,
         including any variations with green or white text, the media used on the
         website, and other terms related to Lotus Valley School, Gurgaon are the
         intellectual property of Lotus Valley School, Gurgaon. All rights
         reserved.{" "}
       </p>
-      <div className="z-50 bg-slate-950 text-neutral-100 lg:h-20 w-screen flex flex-col gap-y-5 lg:flex-row px-20 items-center justify-between py-5 lg:py-0 ">
+      <div className="z-50 flex w-screen flex-col items-center justify-between gap-y-5 bg-slate-950 px-20 py-5 text-neutral-100 lg:h-20 lg:flex-row lg:py-0">
         {" "}
-        <p className="leading-7 [&:not(:first-child)]:mt-6 ">
+        <p className="leading-7 [&:not(:first-child)]:mt-6">
           Powered by Entab: <a href="https://lviscampuscare.org">CampusCare</a>
         </p>
-        <p className="leading-7  text-neutral-100 z-10">
+        <p className="z-10 leading-7 text-neutral-100">
           &copy; Jayan Sunil, 2024
         </p>
-        <p className="leading-7 ">
+        <p className="leading-7">
           Designed and Developed by:{" "}
           <a href="https://github.com/JayanAXHF">Jayan Sunil</a>
         </p>

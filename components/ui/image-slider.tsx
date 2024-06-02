@@ -21,18 +21,19 @@ export const ImagesSlider = ({
   direction?: "up" | "down";
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  // eslint-disable-next-line
   const [loading, setLoading] = useState(false);
   const [loadedImages, setLoadedImages] = useState<string[]>([]);
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex + 1 === images.length ? 0 : prevIndex + 1
+      prevIndex + 1 === images.length ? 0 : prevIndex + 1,
     );
   };
 
   const handlePrevious = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex - 1 < 0 ? images.length - 1 : prevIndex - 1
+      prevIndex - 1 < 0 ? images.length - 1 : prevIndex - 1,
     );
   };
 
@@ -119,8 +120,8 @@ export const ImagesSlider = ({
   return (
     <div
       className={cn(
-        "overflow-hidden h-full w-full relative flex items-center justify-center",
-        className
+        "relative flex size-full items-center justify-center overflow-hidden",
+        className,
       )}
       style={{
         perspective: "1000px",
@@ -129,7 +130,7 @@ export const ImagesSlider = ({
       {areImagesLoaded && children}
       {areImagesLoaded && overlay && (
         <div
-          className={cn("absolute inset-0 bg-black/60 z-40", overlayClassName)}
+          className={cn("absolute inset-0 z-40 bg-black/60", overlayClassName)}
         />
       )}
 
@@ -142,7 +143,7 @@ export const ImagesSlider = ({
             animate="visible"
             exit={direction === "up" ? "upExit" : "downExit"}
             variants={slideVariants}
-            className="image h-full w-full absolute inset-0 object-cover object-center"
+            className="image absolute inset-0 size-full object-cover object-center"
           />
         </AnimatePresence>
       )}

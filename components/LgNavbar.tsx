@@ -14,8 +14,8 @@ export default function LgNavbar({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "fixed  w-max *:z-50  top-10 inset-x-0 max-w-3xl mx-auto ",
-        className
+        "fixed inset-x-0 top-10 mx-auto w-max max-w-3xl *:z-50",
+        className,
       )}
     >
       <Menu setActive={setActive}>
@@ -28,7 +28,7 @@ export default function LgNavbar({ className }: { className?: string }) {
               active={active}
               item={item.title}
             >
-              <div className="text-sm grid grid-cols-2 gap-10 p-4 z-50 *:z-50">
+              <div className="z-50 grid grid-cols-2 gap-10 p-4 text-sm *:z-50">
                 {item.subItems.map((subItem, index) => {
                   return (
                     <ProductItem

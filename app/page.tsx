@@ -26,7 +26,7 @@ export default function Home() {
         <Partner />
         <Footer />
       </div>
-      <span className="hidden lg:flex *:z-50">
+      <span className="hidden *:z-50 lg:flex">
         <LgNavbar />
       </span>{" "}
       <span className="flex lg:hidden">

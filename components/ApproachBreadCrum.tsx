@@ -16,7 +16,7 @@ import {
 } from "./ui/dropdown-menu";
 import Link from "next/link";
 
-const AboutBreadcrum = ({ aboutPage }: { aboutPage: String }) => {
+const AboutBreadcrum = ({ approachPage }: { approachPage: String }) => {
   return (
     <div className="z-10">
       <Breadcrumb>
@@ -30,30 +30,30 @@ const AboutBreadcrum = ({ aboutPage }: { aboutPage: String }) => {
           <BreadcrumbItem>
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center gap-1">
-                About
+                Learning Approach
                 <ChevronDown className="size-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent align="start">
                 <DropdownMenuItem asChild>
-                  <Link href="/about/lvis">About Us</Link>
+                  <Link href="/approach/curriculum">Curriculum</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link href="/about/management">Management</Link>
+                  <Link href="/approach/management">Management</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link href="/about/partnerships">Partnerships</Link>
+                  <Link href="/approach/partnerships">Partnerships</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link href="/about/aaa">Awards &amp; Achievements</Link>
+                  <Link href="/approach/aaa">Awards &amp; Achievements</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Link href="/about/faculty">Faculty</Link>
+                  <Link href="/approach/faculty">Faculty</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Link href="/about/staff_details">Staff Details</Link>
+                  <Link href="/approach/staff_details">Staff Details</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Link href="/about/strength">School Strength</Link>
+                  <Link href="/approach/strength">School Strength</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>Gallery</DropdownMenuItem>
               </DropdownMenuContent>
@@ -63,7 +63,7 @@ const AboutBreadcrum = ({ aboutPage }: { aboutPage: String }) => {
             <Slash />
           </BreadcrumbSeparator>
           <BreadcrumbItem>
-            <BreadcrumbPage>{aboutPage}</BreadcrumbPage>
+            <BreadcrumbPage>{approachPage}</BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>

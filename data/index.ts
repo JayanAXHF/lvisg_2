@@ -13,7 +13,7 @@ export const navItems = [
         name: "Learning Approach",
         description:
           "We believe that a good pedagogy is essential for child growth",
-        href: "/about/management",
+        href: "/approach/curriculum",
       },
       {
         name: "Virtual Tour",

@@ -1,12 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import {
-  motion,
-  useTransform,
-  useScroll,
-  useVelocity,
-  useSpring,
-} from "framer-motion";
+import { motion, useTransform, useScroll, useSpring } from "framer-motion";
 import { cn } from "@/utils/cn";
 
 export const TracingBeam = ({
@@ -36,22 +30,22 @@ export const TracingBeam = ({
     {
       stiffness: 500,
       damping: 90,
-    }
+    },
   );
   const y2 = useSpring(
     useTransform(scrollYProgress, [0, 1], [50, svgHeight - 200]),
     {
       stiffness: 500,
       damping: 90,
-    }
+    },
   );
 
   return (
     <motion.div
       ref={ref}
-      className={cn("relative w-full  mx-auto h-full", className)}
+      className={cn("relative mx-auto h-full w-full", className)}
     >
-      <div className="absolute -left-4 md:-left-20 top-3 opacity-0 lg:opacity-100">
+      <div className="absolute -left-4 top-3 opacity-0 md:-left-20 lg:opacity-100">
         <motion.div
           transition={{
             duration: 0.2,
@@ -63,7 +57,7 @@ export const TracingBeam = ({
                 ? "none"
                 : "rgba(0, 0, 0, 0.24) 0px 3px 8px",
           }}
-          className="ml-[27px] h-4 w-4 rounded-full border border-netural-200 shadow-sm flex items-center justify-center"
+          className="border-netural-200 ml-[27px] flex size-4 items-center justify-center rounded-full border shadow-sm"
         >
           <motion.div
             transition={{
@@ -76,14 +70,14 @@ export const TracingBeam = ({
               borderColor:
                 scrollYProgress.get() > 0 ? "white" : "var(--emerald-600)",
             }}
-            className="h-2 w-2  rounded-full border border-neutral-300 bg-white"
+            className="h-2 w-2 rounded-full border border-neutral-300 bg-white"
           />
         </motion.div>
         <svg
           viewBox={`0 0 20 ${svgHeight}`}
           width="20"
           height={svgHeight} // Set the SVG height
-          className=" ml-4 block"
+          className="ml-4 block"
           aria-hidden="true"
         >
           <motion.path

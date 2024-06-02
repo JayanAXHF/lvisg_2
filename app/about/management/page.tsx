@@ -1,12 +1,10 @@
 "use client";
 
+// ----
 import { HeroWithImage } from "@/components/ui/hero-image";
 import { motion } from "framer-motion";
 import React from "react";
 import dynamic from "next/dynamic";
-const Highlight = dynamic(() => import("@/components/ui/hero-highlight"), {
-  ssr: true,
-});
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import Footer from "@/components/Footer";
 import Image from "next/image";
@@ -14,43 +12,31 @@ import LgNavbar from "@/components/LgNavbar";
 import Navbar from "@/components/Navbar";
 import { WobbleCard } from "@/components/ui/wobblecard";
 import advisoryBoardMembers from "@/data/advisoryBoardMembers";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-import { Slash, ChevronDown } from "lucide-react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import Link from "next/link";
 import AboutBreadcrum from "@/components/AboutBreadcrum";
+const Highlight = dynamic(() => import("@/components/ui/hero-highlight"), {
+  ssr: true,
+});
+// ----
 
 const Page = () => {
   return (
-    <div className="mb-0 w-full  dark:bg-black bg-white  dark:bg-dot-white/[0.09] bg-dot-black/[0.1] relative flex items-center justify-center flex-col overflow-x-none">
-      <span className="hidden lg:flex *:z-50">
+    <div className="relative mb-0 flex w-full flex-col items-center justify-center bg-white bg-dot-black/[0.1] dark:bg-black dark:bg-dot-white/[0.09]">
+      <span className="hidden *:z-50 lg:flex">
         <LgNavbar />
       </span>{" "}
       <span className="flex lg:hidden">
         <Navbar />
       </span>
       <HeroWithImage className="h-[50rem]" src="/banner-about-management.jpg">
-        <motion.div className="z-50 flex flex-col justify-center items-center">
-          <motion.p className="font-bold text-xl md:text-6xl text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-300 py-4">
+        <motion.div className="z-50 flex flex-col items-center justify-center">
+          <motion.p className="bg-gradient-to-b from-neutral-50 to-neutral-300 bg-clip-text py-4 text-center text-xl font-bold text-transparent md:text-6xl">
             <Highlight className="text-white">Management</Highlight>
           </motion.p>
         </motion.div>
       </HeroWithImage>
-      <TracingBeam className="lg:px-6 w-[90%] flex items-center justify-center mb-20">
-        <div className="lg:w-[1401px] w-full  lg:px-20  pt-20">
-          <div className=" text-left w-full">
+      <TracingBeam className="mb-20 flex w-[90%] items-center justify-center lg:px-6">
+        <div className="w-full pt-20 lg:w-[1401px] lg:px-20">
+          <div className="w-full text-left">
             <AboutBreadcrum aboutPage={"Management"} />
           </div>
           <h2 className="my-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
@@ -58,32 +44,32 @@ const Page = () => {
           </h2>
 
           <div className="dp-message mb-10 w-full">
-            <h3 className="mt-8 mb-5 scroll-m-20 text-2xl font-semibold tracking-tight">
+            <h3 className="mb-5 mt-8 scroll-m-20 text-2xl font-semibold tracking-tight">
               Director-Principal&apos;s Message
             </h3>
-            <div className="w-full grid lg:!grid-flow-col  lg:grid-cols-3  lg:gap-x-10 h-max grid-flow-row  lg:grid-rows-1 grid-cols-1">
-              <div className="lg:!col-span-1 row-span-1 ">
+            <div className="grid h-max w-full grid-flow-row grid-cols-1 lg:!grid-flow-col lg:grid-cols-3 lg:grid-rows-1 lg:gap-x-10">
+              <div className="row-span-1 lg:!col-span-1">
                 <Image
                   src={"/management/director-principal.jpg"}
                   alt="director-principal's photo"
-                  className="lg:!w-full w-auto h-auto aspect-auto lg:h-auto rounded-xl"
+                  className="aspect-auto size-auto rounded-xl lg:h-auto lg:!w-full"
                   width={467}
                   height={467}
                 />
               </div>
 
-              <span className="lg:!col-span-2 h-max row-span-1">
-                <p className="leading-7 [&:not(:first-child)]:mt-6 font-bold">
+              <span className="row-span-1 h-max lg:!col-span-2">
+                <p className="font-bold leading-7 [&:not(:first-child)]:mt-6">
                   Mrs Anita Malhotra
                 </p>
-                <p className="leading-7 [&:not(:first-child)]:mt-6 font-bold">
+                <p className="font-bold leading-7 [&:not(:first-child)]:mt-6">
                   Delhi State & CBSE National Awardee
                 </p>
-                <blockquote className="border-l-2 pl-6 italic  mt-6">
+                <blockquote className="mt-6 border-l-2 pl-6 italic">
                   &quot;Perfection is not attainable. But if we chase
                   perfection, we can catch excellence.&quot;
                 </blockquote>
-                <p className="leading-7 [&:not(:first-child)]:mt-6 ">
+                <p className="leading-7 [&:not(:first-child)]:mt-6">
                   Our Director-Principal, Mrs Anita Malhotra is a visionary and
                   a renowned educationist whose deep-rooted commitment and
                   out-of-the-box approach has led the institution to achieve
@@ -143,21 +129,21 @@ const Page = () => {
           </div>
 
           <div className="vp mb-10">
-            <h2 className="mb-10  scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
+            <h2 className="mb-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
               Vice-Principal&apos;s Message
             </h2>
-            <div className="w-full grid lg:!grid-flow-col  lg:grid-cols-3  lg:gap-x-10 h-max grid-flow-row  lg:grid-rows-1 grid-cols-1 gap-y-10">
-              <div className="lg:!col-span-1 row-span-1 ">
+            <div className="grid h-max w-full grid-flow-row grid-cols-1 gap-y-10 lg:!grid-flow-col lg:grid-cols-3 lg:grid-rows-1 lg:gap-x-10">
+              <div className="row-span-1 lg:!col-span-1">
                 <Image
                   src={"/management/vice-principal.jpg"}
                   width={467}
                   height={467}
                   alt="Vp Photo"
-                  className="lg:!w-full w-full h-auto aspect-auto lg:h-auto rounded-xl"
+                  className="aspect-auto h-auto w-full rounded-xl lg:h-auto lg:!w-full"
                 />
               </div>
               <span className="col-span-2">
-                <p className="leading-7 [&:not(:first-child)]:mt-6 ">
+                <p className="leading-7 [&:not(:first-child)]:mt-6">
                   <b> Mrs Ruchi Joshi</b>
                 </p>
                 <p className="leading-7">
@@ -210,21 +196,21 @@ const Page = () => {
             </p>
           </div>
           <div className="vp-mv mb-10">
-            <h2 className="mb-10  scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
+            <h2 className="mb-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
               Vice-Principal&apos;s Message (Middle and Primary Wing)
             </h2>
-            <div className="w-full grid lg:!grid-flow-col  lg:grid-cols-3  lg:gap-x-10 h-max grid-flow-row  lg:grid-rows-1 grid-cols-1 gap-y-10">
-              <div className="lg:!col-span-1 row-span-1 ">
+            <div className="grid h-max w-full grid-flow-row grid-cols-1 gap-y-10 lg:!grid-flow-col lg:grid-cols-3 lg:grid-rows-1 lg:gap-x-10">
+              <div className="row-span-1 lg:!col-span-1">
                 <Image
                   src={"/management/primary-wing-head-mistress.jpg"}
                   width={467}
                   height={467}
                   alt="Vppm Photo"
-                  className="lg:!w-full w-full h-auto aspect-auto lg:h-auto rounded-xl"
+                  className="aspect-auto h-auto w-full rounded-xl lg:h-auto lg:!w-full"
                 />
               </div>
               <span className="col-span-2">
-                <p className="leading-7 [&:not(:first-child)]:mt-6 ">
+                <p className="leading-7 [&:not(:first-child)]:mt-6">
                   <b> Ms Ritu Jawa</b>
                 </p>
                 <p className="leading-7 [&:not(:first-child)]:mt-6">
@@ -266,25 +252,25 @@ const Page = () => {
             </p>
           </div>
           <hr />
-          <div className="patron mb-10 mt-10">
-            <h2 className="mb-10 mt-5  scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
+          <div className="patron my-10">
+            <h2 className="mb-10 mt-5 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
               Patron&apos;s Message
             </h2>
-            <div className="w-full grid lg:!grid-flow-col  lg:grid-cols-3  lg:gap-x-10 h-max grid-flow-row  lg:grid-rows-1 grid-cols-1 gap-y-10">
-              <div className="lg:!col-span-1 row-span-1 ">
+            <div className="grid h-max w-full grid-flow-row grid-cols-1 gap-y-10 lg:!grid-flow-col lg:grid-cols-3 lg:grid-rows-1 lg:gap-x-10">
+              <div className="row-span-1 lg:!col-span-1">
                 <Image
                   src={"/management/patrons.jpg"}
                   width={467}
                   height={467}
                   alt="vision photo"
-                  className="w-full aspect-auto rounded-xl"
+                  className="aspect-auto w-full rounded-xl"
                 />
               </div>
               <span className="col-span-2">
-                <p className="leading-7 [&:not(:first-child)]:mt-6 ">
+                <p className="leading-7 [&:not(:first-child)]:mt-6">
                   <b> Dr Shayama Chona</b>
                 </p>
-                <blockquote className="border-l-2 pl-6 italic  mt-6">
+                <blockquote className="mt-6 border-l-2 pl-6 italic">
                   Their smile tells us &quot;I can do it, give me a chance but I
                   need you&quot; That is the truth. They need you, give them a
                   hand.
@@ -343,8 +329,8 @@ const Page = () => {
               to the fact that when everyone is included, everyone wins.
             </p>
           </div>
-          <div className="mt-10 advisory-board">
-            <h2 className="mb-10 mt-5  scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
+          <div className="advisory-board mt-10">
+            <h2 className="mb-10 mt-5 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
               Advisory Board Members
             </h2>
             <div className="flex flex-col gap-y-10">
@@ -355,17 +341,17 @@ const Page = () => {
                       containerClassName=" *:text-neutral-950 max-w-2xl lg:max-w-full mix-h-[500px]  lg:min-h-[600px] xl:min-h-[300px] bg-neutral-200/[0.7] text-white z-10 items-start py-0 px-0"
                       key={idx}
                     >
-                      <div className="w-full grid lg:grid-flow-col grid-flow-row lg:grid-cols-3 min-h-[500px] lg:min-h-[600px] xl:min-h-[300px] items-center content-center gap-5 justify-items-center">
-                        <div className="lg:col-span-1 w-full h-full ">
+                      <div className="grid min-h-[500px] w-full grid-flow-row content-center items-center justify-items-center gap-5 lg:min-h-[600px] lg:grid-flow-col lg:grid-cols-3 xl:min-h-[300px]">
+                        <div className="size-full lg:col-span-1">
                           <Image
                             width={500}
                             height={500}
                             src={`${member.img}`}
                             alt={member.name}
-                            className=" h-full rounded-xl lg:h-auto lg:w-auto  w-full min-w-full "
+                            className="size-full min-w-full rounded-xl lg:size-auto"
                           />
                         </div>
-                        <div className="lg:col-span-2 w-full h-full lg:flex lg:justify-center lg:flex-col">
+                        <div className="size-full lg:col-span-2 lg:flex lg:flex-col lg:justify-center">
                           <h3 className="scroll-m-20 text-2xl font-bold tracking-tight">
                             {member.name}
                           </h3>

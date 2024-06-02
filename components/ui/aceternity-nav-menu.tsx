@@ -2,7 +2,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
 
 const transition = {
   type: "spring",
@@ -30,7 +29,7 @@ export const MenuItem = ({
         setActive(item);
         console.debug(item);
       }}
-      className="relative "
+      className="relative"
     >
       <motion.p
         transition={{ duration: 0.3 }}
@@ -45,15 +44,15 @@ export const MenuItem = ({
           transition={transition}
         >
           {active === item && (
-            <div className="absolute top-[calc(100%_+_1.2rem)] left-1/2 transform -translate-x-1/2 pt-4 z-50">
+            <div className="absolute left-1/2 top-[calc(100%_+_1.2rem)] z-50 -translate-x-1/2 transform pt-4">
               <motion.div
                 transition={transition}
                 layoutId="active" // layoutId ensures smooth animation
-                className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl  border border-black/[0.2] dark:border-white/[0.2] shadow-xl z-50"
+                className="z-50 rounded-2xl border border-black/[0.2] bg-white shadow-xl backdrop-blur-sm dark:border-white/[0.2] dark:bg-black"
               >
                 <motion.div
                   layout // layout ensures smooth animation
-                  className="w-max h-full p-4 z-50"
+                  className="z-50 h-full w-max p-4"
                 >
                   {children}
                 </motion.div>
@@ -76,7 +75,7 @@ export const Menu = ({
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className="relative rounded-full border border-black/[0.2] dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-center space-x-4 px-8 py-6 z-[100]"
+      className="relative z-[100] flex justify-center space-x-4 rounded-full border border-black/[0.2] bg-white px-8 py-6 shadow-input dark:border-white/[0.2] dark:bg-black"
     >
       {children}
     </nav>
@@ -93,12 +92,12 @@ export const ProductItem = ({
   href: string;
 }) => {
   return (
-    <Link href={href} className="flex space-x-2 ">
+    <Link href={href} className="flex space-x-2">
       <div>
-        <h4 className="text-xl font-semibold mb-1 text-black dark:text-white">
+        <h4 className="mb-1 text-xl font-semibold text-black dark:text-white">
           {title}
         </h4>
-        <p className="text-neutral-700 text-sm max-w-[10rem] dark:text-neutral-300">
+        <p className="max-w-40 text-sm text-neutral-700 dark:text-neutral-300">
           {description}
         </p>
       </div>
@@ -110,7 +109,7 @@ export const HoveredLink = ({ children, ...rest }: any) => {
   return (
     <Link
       {...rest}
-      className="text-neutral-700 dark:text-neutral-200 hover:text-black "
+      className="text-neutral-700 hover:text-black dark:text-neutral-200"
     >
       {children}
     </Link>

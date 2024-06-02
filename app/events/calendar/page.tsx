@@ -1,44 +1,42 @@
 "use client";
+// ----
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import { HeroWithImage } from "@/components/ui/hero-image";
 import { motion } from "framer-motion";
 import React from "react";
 import dynamic from "next/dynamic";
+import Footer from "@/components/Footer";
+import LgNavbar from "@/components/LgNavbar";
+import Navbar from "@/components/Navbar";
 const Highlight = dynamic(() => import("@/components/ui/hero-highlight"), {
   ssr: true,
 });
-import { TracingBeam } from "@/components/ui/tracing-beam";
-import Footer from "@/components/Footer";
-import Image from "next/image";
-import LgNavbar from "@/components/LgNavbar";
-import Navbar from "@/components/Navbar";
-
-import AboutBreadcrum from "@/components/AboutBreadcrum";
+// ----
 
 const Page = () => {
   return (
-    <div className="min-h-screen w-full  dark:bg-black bg-white  dark:bg-dot-white/[0.09] bg-dot-black/[0.1] relative flex items-center justify-center flex-col overflow-x-none">
-      <span className="hidden lg:flex *:z-50">
+    <div className="relative flex min-h-screen w-full flex-col items-center justify-center bg-white bg-dot-black/[0.1] dark:bg-black dark:bg-dot-white/[0.09]">
+      <span className="hidden *:z-50 lg:flex">
         <LgNavbar />
       </span>{" "}
       <span className="flex lg:hidden">
         <Navbar />
       </span>
       <HeroWithImage className="h-[50rem]" src="/banner-school.jpg">
-        <motion.div className="z-50 flex flex-col justify-center items-center">
-          <motion.p className="font-bold text-xl md:text-6xl text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-300 py-4">
+        <motion.div className="z-50 flex flex-col items-center justify-center">
+          <motion.p className="bg-gradient-to-b from-neutral-50 to-neutral-300 bg-clip-text py-4 text-center text-xl font-bold text-transparent md:text-6xl">
             <Highlight className="text-white">School Calendar</Highlight>
           </motion.p>
         </motion.div>
       </HeroWithImage>
-      <div className="px-6 w-[90%] flex justify-center mb-20">
-        <div className="lg:w-full  lg:px-20  pt-20">
+      <div className="mb-20 flex w-[90%] justify-center px-6">
+        <div className="pt-20 lg:w-full lg:px-20">
           {/* <div className=" text-left w-full">
             <AboutBreadcrum aboutPage={"School Calendar"} />
           </div> */}
 
-          <div className="mt-10 staff-details">
+          <div className="staff-details mt-10">
             <FullCalendar
               plugins={[dayGridPlugin]}
               initialView="dayGridMonth"

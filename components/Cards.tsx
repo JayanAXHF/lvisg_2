@@ -6,10 +6,10 @@ import "../app/globals.css";
 
 const Cards = () => {
   return (
-    <div className=" w-screen pt-10 rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden pb-20">
+    <div className="relative flex w-screen flex-col items-center justify-center overflow-hidden rounded-md bg-white pb-20 pt-10 antialiased dark:bg-black dark:bg-grid-white/[0.05]">
       <TextGenerateEffect
         words="Events at Lotus Valley International School Gurugram"
-        className="pb-10 px-5 text-center"
+        className="px-5 pb-10 text-center"
       />
       <InfiniteMovingCards
         items={bannerCards}

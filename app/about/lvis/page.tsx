@@ -1,49 +1,49 @@
 "use client";
-
+// ----
 import { HeroWithImage } from "@/components/ui/hero-image";
 import { motion } from "framer-motion";
 import React from "react";
 import dynamic from "next/dynamic";
-const Highlight = dynamic(() => import("@/components/ui/hero-highlight"), {
-  ssr: true,
-});
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 import LgNavbar from "@/components/LgNavbar";
 import Navbar from "@/components/Navbar";
 import AboutBreadcrum from "@/components/AboutBreadcrum";
-import Head from "next/head";
-import { Partytown } from "@builder.io/partytown/react";
+const Highlight = dynamic(() => import("@/components/ui/hero-highlight"), {
+  ssr: true,
+});
+// ----
+
 const Page = () => {
   return (
     <React.Fragment>
-      <div className="min-h-screen w-full  dark:bg-black bg-white  dark:bg-dot-white/[0.09] bg-dot-black/[0.1] relative flex items-center justify-center flex-col overflow-x-none">
-        <span className="hidden lg:flex *:z-50">
+      <div className="relative flex min-h-screen w-full flex-col items-center justify-center bg-white bg-dot-black/[0.1] dark:bg-black dark:bg-dot-white/[0.09]">
+        <span className="hidden *:z-50 lg:flex">
           <LgNavbar />
         </span>{" "}
         <span className="flex lg:hidden">
           <Navbar />
         </span>
         <HeroWithImage className="h-[50rem]" src="/banner-vision.jpg">
-          <motion.div className="z-50 flex flex-col justify-center items-center">
-            <motion.p className="font-bold text-xl md:text-6xl text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-300 py-4">
+          <motion.div className="z-50 flex flex-col items-center justify-center">
+            <motion.p className="bg-gradient-to-b from-neutral-50 to-neutral-300 bg-clip-text py-4 text-center text-xl font-bold text-transparent md:text-6xl">
               <Highlight className="text-white">Vision</Highlight>
             </motion.p>
           </motion.div>
         </HeroWithImage>
-        <TracingBeam className="lg:px-6 w-[90%] flex justify-center mb-10">
-          <div className="lg:w-[1401px]  lg:px-20  py-20">
-            <div className=" text-left w-full">
+        <TracingBeam className="mb-10 flex w-[90%] justify-center lg:px-6">
+          <div className="py-20 lg:w-[1401px] lg:px-20">
+            <div className="w-full text-left">
               <AboutBreadcrum aboutPage={"About Us"} />
             </div>
             <h2 className="my-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
               Vision
             </h2>
             <div className="vision mb-10">
-              <div className="w-full grid lg:!grid-flow-col  lg:grid-cols-3  lg:gap-x-10 h-max grid-flow-row  lg:grid-rows-1 grid-cols-1">
+              <div className="grid h-max w-full grid-flow-row grid-cols-1 lg:!grid-flow-col lg:grid-cols-3 lg:grid-rows-1 lg:gap-x-10">
                 <span className="col-span-2 w-full">
-                  <p className="leading-7 [&:not(:first-child)]:mt-6 ">
+                  <p className="leading-7 [&:not(:first-child)]:mt-6">
                     At Lotus Valley International School, Gurugram, we aspire to
                     craft socially conscious, self-aware and responsible global
                     citizens who will construct, shape, and serve society. The
@@ -77,13 +77,13 @@ const Page = () => {
                     whetting their innate potential.
                   </p>
                 </span>
-                <div className="w-full h-full lg:col-span-1">
+                <div className="size-full lg:col-span-1">
                   <Image
                     src={"/vision1668497851.jpg"}
                     width={467}
                     height={467}
                     alt="vision photo"
-                    className="h-full aspect-auto rounded-xl lg:w-auto w-full"
+                    className="aspect-auto size-full rounded-xl lg:w-auto"
                   />
                 </div>
               </div>
@@ -99,7 +99,7 @@ const Page = () => {
               </p>
             </div>
             <div className="mission mb-10">
-              <h2 className="mb-10  scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
+              <h2 className="mb-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
                 Mission
               </h2>
               <p className="leading-7 [&:not(:first-child)]:mt-6">
@@ -111,7 +111,7 @@ const Page = () => {
               </p>
             </div>
             <div className="school_motto mb-10">
-              <h2 className="mb-10  scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
+              <h2 className="mb-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
                 School Motto
               </h2>
               <p className="leading-7 [&:not(:first-child)]:mt-6">
@@ -128,19 +128,19 @@ const Page = () => {
               </p>
             </div>
             <div className="emblem mb-10">
-              <h2 className="mb-10  scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
+              <h2 className="mb-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
                 School Emblem
               </h2>
-              <div className="w-full grid lg:!grid-flow-col  lg:grid-cols-3  lg:gap-x-10 h-max grid-flow-row  lg:grid-rows-1 grid-cols-1 gap-y-6">
+              <div className="grid h-max w-full grid-flow-row grid-cols-1 gap-y-6 lg:!grid-flow-col lg:grid-cols-3 lg:grid-rows-1 lg:gap-x-10">
                 <Image
                   src={"/school_emblem.jpg"}
                   width={467}
                   height={467}
                   alt="vision photo"
-                  className="h-full aspect-[4/3] rounded-xl"
+                  className="aspect-[4/3] h-full rounded-xl"
                 />
                 <span className="col-span-2">
-                  <p className="leading-7 [&:not(:first-child)]:mt-6 ">
+                  <p className="leading-7 [&:not(:first-child)]:mt-6">
                     Lotus Valley International School is passionately committed
                     to pursue excellence in every conceivable field. For us
                     every child is a leader of tomorrow and we leave no stone
@@ -198,16 +198,16 @@ const Page = () => {
               </p>
             </div>
             <div className="vision mb-10">
-              <h2 className="mb-10  scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
+              <h2 className="mb-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
                 Avant-Garde Philosophy
               </h2>
-              <div className="w-full grid lg:!grid-flow-col  lg:grid-cols-3  lg:gap-x-10 h-max grid-flow-row lg:grid-rows-1 grid-cols-1 gap-y-6">
+              <div className="grid h-max w-full grid-flow-row grid-cols-1 gap-y-6 lg:!grid-flow-col lg:grid-cols-3 lg:grid-rows-1 lg:gap-x-10">
                 <span className="col-span-2">
                   <blockquote className="border-l-2 pl-6 italic">
                     &apos;&apos;Education should bring to light the ideal of the
                     individual.&apos;&apos;
                   </blockquote>
-                  <p className="leading-7 [&:not(:first-child)]:mt-6 ">
+                  <p className="leading-7 [&:not(:first-child)]:mt-6">
                     We believe that every child is unique. Each one has a
                     different pace of learning, which needs to be discovered by
                     the school. Therefore, Lotus Valley International School
@@ -233,7 +233,7 @@ const Page = () => {
                   width={`${0}`}
                   height={`${100}`}
                   alt="vision photo"
-                  className="h-full aspect-[4/3] rounded-xl"
+                  className="aspect-[4/3] h-full rounded-xl"
                 />
               </div>
             </div>
