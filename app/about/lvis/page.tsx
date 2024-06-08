@@ -230,8 +230,6 @@ const Page = () => {
                 </span>
                 <Image
                   src={"/core-philosophy.jpg"}
-                  width={`${0}`}
-                  height={`${100}`}
                   alt="vision photo"
                   className="aspect-[4/3] h-full rounded-xl"
                 />

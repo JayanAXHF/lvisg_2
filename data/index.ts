@@ -115,7 +115,7 @@ export { awards };
 export const curriculumItems = [
   {
     year: "2024-25",
-    gradeList: ["iv", "v", "vi", "vii", "viii", "ix", "x", "xi", "XII"],
+    gradeList: ["iv", "v", "vi", "vii", "viii", "x", "xi", "XII"],
   },
   {
     year: "2023-24",
