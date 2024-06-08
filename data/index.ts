@@ -111,3 +111,49 @@ export const bannerCards = [
 ];
 
 export { awards };
+
+export const curriculumItems = [
+  {
+    year: "2024-25",
+    gradeList: ["iv", "v", "vi", "vii", "viii", "ix", "x", "xi", "XII"],
+  },
+  {
+    year: "2023-24",
+    gradeList: [
+      "pn",
+      "nry",
+      "prep",
+      "i",
+      "ii",
+      "iii",
+      "iv",
+      "v",
+      "vi",
+      "vii",
+      "viii",
+      "ix",
+      "x",
+      "xi",
+      "xii",
+    ],
+  },
+  {
+    year: "2022-23",
+    gradeList: [
+      "pn",
+      "nry",
+      "prep",
+      "i",
+      "ii",
+      "iii",
+      "iv",
+      "v",
+      "vi",
+      "vii",
+      "viii",
+      "ix",
+      "x",
+      "xii",
+    ],
+  },
+];

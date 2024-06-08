@@ -216,7 +216,7 @@ for (let index = 0; index < tableRaw.length; index++) {
       .replace("\t</td></tr>", "")
       .replace("\t", "");
   }
-  //   console.log(temp);
+
   tableSemiRaw.push({ name: temp[0], qualification: temp[1], id: index + 1 });
 }
 

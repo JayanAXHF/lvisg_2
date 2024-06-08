@@ -27,7 +27,6 @@ export const MenuItem = ({
     <div
       onMouseEnter={() => {
         setActive(item);
-        console.debug(item);
       }}
       className="relative"
     >

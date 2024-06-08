@@ -47,12 +47,12 @@ export const InfiniteMovingCards = ({
       if (direction === "left") {
         containerRef.current.style.setProperty(
           "--animation-direction",
-          "forwards"
+          "forwards",
         );
       } else {
         containerRef.current.style.setProperty(
           "--animation-direction",
-          "reverse"
+          "reverse",
         );
       }
     }
@@ -71,19 +71,19 @@ export const InfiniteMovingCards = ({
   return (
     <div
       ref={containerRef}
-      className={cn("scroller relative z-5  overflow-hidden  ", className)}
+      className={cn("scroller z-5 relative overflow-hidden", className)}
     >
       <ul
         ref={scrollerRef}
         className={cn(
-          " flex min-w-full shrink-0 gap-4 py-4 w-max flex-nowrap",
-          start && "animate-scroll ",
-          pauseOnHover && "hover:[animation-play-state:paused]"
+          "flex w-max min-w-full shrink-0 flex-nowrap gap-4 py-4",
+          start && "animate-scroll",
+          pauseOnHover && "hover:[animation-play-state:paused]",
         )}
       >
         {items.map((item, idx) => (
           <li
-            className="w-[350px] max-w-full relative rounded-2xl border border-b-0 flex-shrink-0 border-slate-700 p-1  flex justify-center items-center  md:w-[450px]"
+            className="relative flex w-[350px] max-w-full flex-shrink-0 items-center justify-center rounded-2xl border border-b-0 border-slate-700 p-1 md:w-[450px]"
             style={{
               background:
                 "linear-gradient(180deg, var(--slate-800), var(--slate-900)",
@@ -93,11 +93,11 @@ export const InfiniteMovingCards = ({
             <Image
               alt="slider image"
               src={item.src}
-              className="w-full aspect-auto rounded-2xl "
+              className="aspect-auto w-full rounded-2xl"
               width={1}
               height={1}
-              sizes="100%"
-              layout="responsive"
+              // sizes="100%"
+              // layout="responsive"
             />
           </li>
         ))}
