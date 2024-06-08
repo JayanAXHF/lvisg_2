@@ -94,8 +94,7 @@ export const InfiniteMovingCards = ({
               alt="slider image"
               src={item.src}
               className="aspect-auto w-full rounded-2xl"
-              width={1}
-              height={1}
+
               // sizes="100%"
               // layout="responsive"
             />
