@@ -7,7 +7,7 @@ import Highlight from "./ui/hero-highlight";
 const ImageSlider = () => {
   const images = [
     "/carousel/banner-8524-2.jpg",
-    "https://www.edustoke.com/assets/uploads-new/lotus-valley-international-school-1495268531-2.jpg",
+    // "https://www.edustoke.com/assets/uploads-new/lotus-valley-international-school-1495268531-2.jpg",
     "/hm-learning.jpg",
   ];
   return (

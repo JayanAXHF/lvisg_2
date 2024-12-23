@@ -11,11 +11,11 @@ const Boxes = dynamic(() => import("./ui/background-boxes"), {
 
 export default function Footer() {
   return (
-    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden bg-lvis-red lg:h-[30rem] lg:bg-slate-900">
-      <div className="grid grid-flow-row content-between py-0">
+    <div className="relative flex w-full flex-col content-center items-center justify-center overflow-hidden bg-lvis-red lg:h-[40rem] lg:bg-slate-900">
+      <div className="grid grid-flow-row content-center items-center py-0">
         <div className="pointer-events-none absolute inset-0 z-10 size-full bg-lvis-red [mask-image:radial-gradient(transparent,white)] lg:bg-slate-900" />
         <Boxes className="hidden lg:flex" />
-        <div className="grid size-full grid-flow-row items-center justify-between gap-x-5 p-10 lg:grid-cols-8">
+        <div className="grid size-full grid-flow-row content-center items-center justify-between gap-x-5 p-10 lg:grid-cols-8">
           <div className="z-50 h-full lg:col-span-3">
             <Image
               alt="school logo"
@@ -23,9 +23,9 @@ export default function Footer() {
               src="/logo_white.png"
             />
           </div>
-          <div className="grid gap-x-10 gap-y-8 lg:col-span-5 lg:grid-flow-row lg:grid-cols-4">
+          <div className="grid items-center gap-x-10 gap-y-8 lg:col-span-5 lg:grid-flow-row lg:grid-cols-4">
             <div className="col-span-2">
-              <WobbleCard containerClassName="col-span-1 lg:col-span-2 bg-yellow-800  lg:bg-teal-800/[0.7] text-white z-10 items-start py-0">
+              <WobbleCard containerClassName="col-span-1 h-96 lg:col-span-2 bg-yellow-800  lg:bg-teal-800/[0.9] text-white z-10 items-start py-0">
                 <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">
                   Quick Links
                 </h4>
@@ -39,7 +39,7 @@ export default function Footer() {
               </WobbleCard>
             </div>
             <div className="col-span-2">
-              <WobbleCard containerClassName="col-span-1 lg:col-span-2 bg-yellow-800  lg:bg-teal-800/[0.7] text-white z-10 items-start py-0">
+              <WobbleCard containerClassName="col-span-1 h-96 lg:col-span-2 bg-yellow-800  lg:bg-teal-800/[0.9] text-white z-10 items-center py-0">
                 <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">
                   Contact Us
                 </h4>
@@ -74,15 +74,14 @@ export default function Footer() {
         intellectual property of Lotus Valley School, Gurgaon. All rights
         reserved.{" "}
       </p>
-      <div className="z-50 flex w-screen flex-col items-center justify-between gap-y-5 bg-slate-950 px-20 py-5 text-neutral-100 lg:h-20 lg:flex-row lg:py-0">
-        {" "}
-        <p className="leading-7 [&:not(:first-child)]:mt-6">
+      <div className="absolute bottom-0 z-50 grid w-dvw grid-flow-row content-center items-center justify-between gap-y-5 bg-slate-950 px-20 py-5 text-neutral-100 lg:h-12 lg:grid-flow-col lg:py-5">
+        <p className="">
           Powered by Entab: <a href="https://lviscampuscare.org">CampusCare</a>
         </p>
-        <p className="z-10 leading-7 text-neutral-100">
-          &copy; Jayan Sunil, 2024
+        <p className="z-10 mb-3 text-neutral-100">
+          {/* &copy; Jayan Sunil, 2024   */}
         </p>
-        <p className="leading-7">
+        <p className="m">
           Designed and Developed by:{" "}
           <a href="https://github.com/JayanAXHF">Jayan Sunil</a>
         </p>
